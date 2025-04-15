@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-title: 'Unbounded', sans-serif;
+	--font-pixel: "Tiny5", sans-serif;
+	--font-main: "Jost", sans-serif;
+	--font-second: "Old Standard TT", serif;
+	--font-next: "Mary Jane", serif;
+	--color-c-dark: #10100c;
+	--color-c-white: #dedccd;
+	--color-c-border: #454545;
+	--color-c-blue: #3971e8;
+	--color-c-main: #3971e8;
+	--color-c-green: #244529;
+	--color-c-yellow: #ffdb00
+}
+@container {
+}
+
+* {
+	cursor: none !important;
+}
+body {
+	overscroll-behavior: none;
+	background-color: #141414;
+}
+.scrolled-block {
+	scroll-snap-align: start;
+}
