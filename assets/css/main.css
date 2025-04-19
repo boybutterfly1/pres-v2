@@ -1,29 +1,45 @@
 @import 'tailwindcss';
 
 @theme {
-	--font-title: 'Unbounded', sans-serif;
-	--font-pixel: "Tiny5", sans-serif;
-	--font-main: "Jost", sans-serif;
-	--font-second: "Old Standard TT", serif;
-	--font-next: "Mary Jane", serif;
-	--color-c-dark: #10100c;
-	--color-c-white: #dedccd;
+	--font-main: "Victor Mono", monospace;
+	--font-title: "Unbounded", sans-serif;
+	--color-c-dark: #000000;
+	--color-c-white: #ffffff;
 	--color-c-border: #454545;
 	--color-c-blue: #3971e8;
 	--color-c-main: #3971e8;
 	--color-c-green: #244529;
 	--color-c-yellow: #ffdb00
 }
-@container {
-}
-
-* {
-	cursor: none !important;
+html {
+	scroll-behavior: smooth;
 }
 body {
 	overscroll-behavior: none;
-	background-color: #141414;
+	background-color: black;
+	position: relative;
+	overflow-x: clip;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	font-size: 0.55rem;
+	font-family: var(--font-main), sans-serif;
+	font-weight: lighter;
+	text-transform: uppercase;
+	color: var(--color-c-white);
 }
 .scrolled-block {
 	scroll-snap-align: start;
+}
+::-webkit-scrollbar {
+	background: none;
+	width: 4px;
+}
+::-webkit-scrollbar-button {
+	display: none;
+}
+::-webkit-scrollbar-thumb {
+	background: white;
+	background-repeat: repeat;
+	border: 1px solid #000;
 }

@@ -1,28 +1,59 @@
 <template>
-  <div ref="pixiContainer" class="w-screen h-screen fixed top-0 left-0" />
+  <div ref="wrapper" class="w-full h-full rounded-xl overflow-hidden">
+    <canvas ref="pixiContainer"/>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { Application } from 'pixi.js';
-import { addGradient } from "~/components/PixiApp/addGradient";
+import { Application } from 'pixi.js'
+import { addGradient } from '~/components/PixiApp/addGradient'
+import { onMounted, onUnmounted, ref } from 'vue'
 
-const pixiContainer = ref<HTMLDivElement | null>(null);
+const wrapper = ref<HTMLDivElement | null>(null)
+const pixiContainer = ref<HTMLCanvasElement | null>(null)
+const app = new Application()
 
-const app = new Application();
+let resizeObserver: ResizeObserver | null = null
 
-async function setupPixi() {
+async function setupPixi(width: number, height: number) {
+  if (!pixiContainer.value) return
+
   await app.init({
-    resizeTo: window,
+    canvas: pixiContainer.value,
+    width,
+    height,
     background: 'black',
-  });
+  })
 
-  if (pixiContainer.value) {
-    pixiContainer.value.appendChild(app.canvas);
-  }
+  addGradient(app)
+}
+
+function resize() {
+  if (!wrapper.value) return
+
+  const { width, height } = wrapper.value.getBoundingClientRect()
+  app.renderer.resize(width, height)
 }
 
 onMounted(async () => {
-  await setupPixi();
-  addGradient(app);
-});
+  if (!wrapper.value) return
+
+  const { width, height } = wrapper.value.getBoundingClientRect()
+  await setupPixi(width, height)
+
+  resizeObserver = new ResizeObserver(() => {
+    resize()
+  })
+
+  resizeObserver.observe(wrapper.value)
+})
+
+onUnmounted(() => {
+  resizeObserver?.disconnect()
+  app.destroy(true)
+})
 </script>
+
+<style scoped>
+
+</style>
