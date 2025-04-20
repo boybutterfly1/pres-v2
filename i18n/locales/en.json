@@ -1,0 +1,39 @@
+{
+  "intro": {
+    "line1": "Hey, my name is Kamil",
+    "line2": "I am a frontend web developer"
+  },
+  "navigation": {
+    "intro": "Intro",
+    "about": "About",
+    "stack": "Stack",
+    "projects": "Projects"
+  },
+  "pageTitle": {
+    "about": "About me",
+    "stack": "MY TECHNOLOGY STACK",
+    "projects": "Selected Projects",
+    "links": "Links"
+  },
+  "contacts": {
+    "github": "Github",
+    "telegram": "Telegram",
+    "email": "Email",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "discord": "Discord"
+  },
+  "header": {
+    "contact": "Get in touch",
+    "date": {
+      "M": "M",
+      "D": "D",
+      "Y": "Y",
+      "T": "T"
+    }
+  },
+  "decoration": {
+    "hi": "HI",
+    "rights": "This website was assembled aboard an orbital station above Ganymede using nanocode and quantum poetry. Any attempt at replication without the approval of the Intergalactic Council may result in temporal anomalies and disruptions in the fabric of taste. ©2025 • BBTRFL1 — a registered hash in the chrono-archive of Sector 7G."
+  }
+}

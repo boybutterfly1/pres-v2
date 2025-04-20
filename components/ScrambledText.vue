@@ -42,7 +42,7 @@ const startAnimation = () => {
     // Обновляем каждый символ случайным
     randomIntervals[index] = window.setInterval(() => {
       displayedChars.value[index] = getRandomChar();
-    }, 100);
+    }, 80);
 
     if (!props.isNonstop) {
       // ⏳ Задержка 1000мс (1 сек) + постепенная анимация
@@ -51,7 +51,7 @@ const startAnimation = () => {
             clearInterval(randomIntervals[index]);
             displayedChars.value[index] = char;
           },
-          300 + (index + 1) * 150 // ← добавляем 1 секунду перед заменой
+          300 + (index + 1) * 120 // ← добавляем 1 секунду перед заменой
       );
     }
   });

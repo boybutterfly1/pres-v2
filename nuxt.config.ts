@@ -37,7 +37,14 @@ export default defineNuxtConfig({
       omitLineBreaks: false,
     },
   },
-  modules: ['@nuxt/image', '@nuxt/icon', '@nuxtjs/google-fonts'],
+  modules: ['@nuxtjs/i18n', '@nuxt/image', '@nuxt/icon', '@nuxtjs/google-fonts'],
+  i18n: {
+    defaultLocale: 'ru',
+    locales: [
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'ru', name: 'Russian', file: 'ru.json' },
+    ]
+  },
   googleFonts: {
     families: {
       Unbounded: [300],

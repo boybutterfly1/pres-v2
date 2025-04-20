@@ -1,13 +1,16 @@
 <template>
-  <div class="w-full sticky top-8 h-[calc(100dvh-4.5rem)] rounded-xl flex items-center justify-start p-5">
+  <div
+      class="w-full sticky top-8 h-[calc(100dvh-4.5rem)] rounded-xl flex items-center justify-start p-5"
+      ref="indexRef"
+  >
     <span
         ref="headline"
         class="fade text-white inline-block text-[3rem] z-20 uppercase font-title mb-[10%] "
         :style="{ transform: `translateY(${translateY}px)` }"
     >
-      Hey, my name is Kamil
+      {{ $t('intro.line1') }}
       <br />
-      I am a front-end web developer
+      {{ $t('intro.line2') }}
     </span>
     <PixiApp class="absolute z-10 top-0 left-0" />
     <VideoFrame class="fixed z-11 bottom-12 right-3" />
@@ -21,6 +24,7 @@ import { useRouterFallback } from "~/components/RouterFallback/useRouterFallback
 
 const { setPending } = useRouterFallback()
 const translateY = ref(0)
+const indexRef = ref<HTMLElement | null>(null);
 
 const handleScroll = () => {
   const scrollTop = window.scrollY

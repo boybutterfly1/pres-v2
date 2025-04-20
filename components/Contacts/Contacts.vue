@@ -1,4 +1,10 @@
 <template>
+  <h2
+      class="text-c-white text-[2rem] font-title font-bold ml-3 mb-3"
+      :class="{ highlighted : isHighlighted }"
+  >
+    <ScrambledText :text="$t('pageTitle.links')"/>
+  </h2>
   <div
       class="w-full grid grid-cols-3 grid-rows-2 gap-[1px] overflow-hidden rounded-sm relative p-[1px] bg-neutral-900"
       :class="{ highlighted : isHighlighted }"
@@ -21,7 +27,7 @@
         class="z-11 rounded-sm cursor-pointer py-1 px-3 uppercase bg-c-dark hover:bg-neutral-800 "
     >
       <div class="w-full flex gap-1 items-center">
-        <span class="text-[0.65rem]">{{ item.title }}</span>
+        <span class="text-[0.65rem]">{{ $t(item.title) }}</span>
         <Icon :name="item.iconName" size="0.7rem"/>
         <Icon name="material-symbols:arrow-outward" size="0.7rem" style="margin-left: auto"/>
       </div>
@@ -37,12 +43,12 @@ const { isHighlighted } = useContacts()
 
 
 const contactLinks = [
-  {title: 'Github', description: '/boybutterfly1', href: 'https://github.com/boybutterfly1', iconName: 'mdi:github-box'},
-  {title: 'Telegram', description: '@boybutterfly1', href: ':', iconName: 'ri:telegram-2-fill'},
-  {title: 'Email', description: 'boybutterfly1@gmail.com', href: 'mailto:', iconName: 'material-symbols:mail'},
-  {title: 'Twitter', description: '', href: ':', iconName: 'hugeicons:new-twitter'},
-  {title: 'Instagram', description: '@boybutterfly1', href: ':', iconName: 'mdi:instagram'},
-  {title: 'Discord', description: 'boybutterfly1', href: ':', iconName: 'ic:baseline-discord'},
+  {title: 'contacts.github', description: '/boybutterfly1', href: 'https://github.com/boybutterfly1', iconName: 'mdi:github-box'},
+  {title: 'contacts.telegram', description: '@boybutterfly1', href: ':', iconName: 'ri:telegram-2-fill'},
+  {title: 'contacts.email', description: 'boybutterfly1@gmail.com', href: 'mailto:', iconName: 'material-symbols:mail'},
+  {title: 'contacts.twitter', description: '', href: ':', iconName: 'hugeicons:new-twitter'},
+  {title: 'contacts.instagram', description: '@boybutterfly1', href: ':', iconName: 'mdi:instagram'},
+  {title: 'contacts.discord', description: 'boybutterfly1', href: ':', iconName: 'ic:baseline-discord'},
 ]
 
 const lightCircle = ref<HTMLDivElement | null>(null);
@@ -84,7 +90,9 @@ onMounted(() => {
 
 @keyframes flash-in {
   0% { opacity: 1; }
-  50% { opacity: 0.5; }
+  25% { opacity: 0.5; }
+  50% { opacity: 1; filter: brightness(150%); }
+  75% { opacity: 0.5; filter: brightness(100%); }
   100% { opacity: 1; }
 }
 </style>

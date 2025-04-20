@@ -14,9 +14,10 @@
           @click="scrollToBlock"
           class="flex items-center uppercase p-1 bg-neutral-800 rounded-sm cursor-pointer hover:bg-white hover:text-black duration-300"
       >
-        <span>Get in touch</span>
+        <span>{{ $t('header.contact') }}</span>
         <Icon name="mynaui:arrow-long-down-solid" size="0.8rem"/>
       </button>
+      <NuxtLink :to="$switchLocalePath(newLocale)">{{ newLocale }}</NuxtLink>
     </section>
   </header>
 </template>
@@ -29,38 +30,38 @@ let intervalId: number
 
 const { scrollToBlock } = useContacts()
 const route = useRoute()
+const { locale, t } = useI18n()
+
+const newLocale = computed(() => {
+  if (locale.value === 'en') {
+    return 'ru'
+  } else return 'en'
+})
 
 const currentRoute = computed<string>(() => {
   return route.name ? route.name.toString() : ''
 })
 
-function updateDate() {
+const updateDate = () => {
   const now = new Date()
-
-  const localeParts = new Intl.DateTimeFormat(undefined, {
+  const formatter = new Intl.DateTimeFormat(locale.value, {
     year: '2-digit',
     month: '2-digit',
     day: '2-digit',
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
-    hour12: true,
-    timeZoneName: undefined,
-  }).formatToParts(now)
+    hour12: false,
+  })
+
+  const parts = formatter.formatToParts(now)
 
   const getPart = (type: string) =>
-      localeParts.find(p => p.type === type)?.value ?? ''
+      parts.find(p => p.type === type)?.value ?? ''
 
-  const month = getPart('month')
-  const day = getPart('day')
-  const year = getPart('year')
-  const hour = getPart('hour')
-  const minute = getPart('minute')
-  const second = getPart('second')
-  const dayPeriod = getPart('dayPeriod')
-
-  formattedDate.value = `M${month} D${day} Y${year} T${hour}:${minute}:${second} ${dayPeriod}`
+  formattedDate.value = `${t('header.date.M')}${getPart('month')} ${t('header.date.D')}${getPart('day')} ${t('header.date.Y')}${getPart('year')} ${t('header.date.T')}${getPart('hour')}:${getPart('minute')}:${getPart('second')} `
 }
+
 
 onMounted(() => {
   updateDate()
