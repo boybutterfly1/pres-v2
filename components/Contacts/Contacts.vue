@@ -1,12 +1,13 @@
 <template>
   <h2
-    class="mb-3 ml-3 font-title text-[2rem] font-bold text-c-white"
+    class="mb-3 ml-3 font-title text-[1.5rem] font-bold text-c-white sm:text-[1.75rem] md:text-[2rem]"
     :class="{ highlighted: isHighlighted }"
   >
     <ScrambledText :text="$t('pageTitle.links')" />
   </h2>
+
   <div
-    class="relative grid w-full grid-cols-3 grid-rows-2 gap-[1px] overflow-hidden rounded-sm bg-neutral-900 p-[1px]"
+    class="relative grid w-full gap-[1px] overflow-hidden rounded-sm bg-neutral-900 p-[1px] sm:grid-cols-2 lg:grid-cols-3"
     :class="{ highlighted: isHighlighted }"
     id="contactsBlock"
   >
@@ -24,14 +25,14 @@
       :key="item.title"
       :href="item.href"
       target="_blank"
-      class="z-11 cursor-pointer rounded-sm bg-c-dark px-3 py-1 uppercase hover:bg-neutral-800"
+      class="z-11 cursor-pointer rounded-sm bg-c-dark px-3 py-2 uppercase transition-colors duration-200 hover:bg-neutral-800"
     >
-      <div class="flex w-full items-center gap-1">
-        <span class="text-[0.65rem]">{{ $t(item.title) }}</span>
-        <Icon :name="item.iconName" size="0.7rem" />
-        <Icon name="material-symbols:arrow-outward" size="0.7rem" style="margin-left: auto" />
+      <div class="flex w-full items-center gap-2">
+        <span class="text-[0.65rem] sm:text-[0.7rem]">{{ $t(item.title) }}</span>
+        <Icon :name="item.iconName" size="0.9rem" />
+        <Icon name="material-symbols:arrow-outward" size="0.9rem" class="ml-auto" />
       </div>
-      <span class="text-neutral-500">{{ item.description }}</span>
+      <span class="text-[0.6rem] text-neutral-500 sm:text-[0.55rem]">{{ item.description }}</span>
     </a>
   </div>
 </template>

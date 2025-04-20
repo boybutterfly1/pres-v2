@@ -1,7 +1,7 @@
 <template>
   <footer
     id="footerBlock"
-    class="relative z-20 mb-10 flex h-[calc(100dvh-4.5rem)] w-full flex-col rounded-t-xl border-b border-dotted border-b-c-white/30 bg-c-dark p-3"
+    class="scrolled-block relative z-20 mb-10 flex h-[calc(100dvh-4.5rem)] w-full flex-col rounded-t-xl border-b border-dotted border-b-c-white/30 bg-c-dark p-3"
   >
     <div class="grid h-full grid-cols-8 grid-rows-2 gap-2.5">
       <img src="/images/globe.webp" width="100" alt="logo" class="" />

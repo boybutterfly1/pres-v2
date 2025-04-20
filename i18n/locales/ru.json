@@ -6,12 +6,12 @@
   "navigation": {
     "intro": "Интро",
     "about": "Обо мне",
-    "stack": "Стэк",
+    "stack": "Стек",
     "projects": "Проекты"
   },
   "pageTitle": {
     "about": "Обо мне",
-    "stack": "Мой стэк технологий",
+    "stack": "Мой стек технологий",
     "projects": "Проекты",
     "links": "Ссылки"
   },

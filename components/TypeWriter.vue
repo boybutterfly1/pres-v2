@@ -23,11 +23,10 @@ function initGsap() {
     ease: 'power2.inOut',
   });
 
-  // Анимация первой строки
   gsap.to('#typewriter', {
     text: props.stringArr[0],
     duration: 2,
-    delay: 1,
+    delay: 0.5,
     onComplete: () => {
       gsap.to('#typewriter', {
         text: props.stringArr.join('<br>'),

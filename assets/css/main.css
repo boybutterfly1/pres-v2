@@ -13,6 +13,8 @@
 }
 html {
 	scroll-behavior: smooth;
+	scrollbar-gutter: stable;
+	scroll-snap-type: y mandatory;
 }
 body {
 	overscroll-behavior: none;
@@ -28,6 +30,9 @@ body {
 	text-transform: uppercase;
 	color: var(--color-c-white);
 }
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
 .scrolled-block {
 	scroll-snap-align: start;
 }
@@ -42,4 +47,11 @@ body {
 	background: white;
 	background-repeat: repeat;
 	border: 1px solid #000;
+}
+.scroll-container {
+	scrollbar-gutter: stable;
+	scroll-snap-type: y mandatory;
+}
+.scrolled-block {
+	scroll-snap-align: start;
 }

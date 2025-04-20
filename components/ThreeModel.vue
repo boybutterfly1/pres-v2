@@ -1,5 +1,5 @@
 <template>
-  <div ref="container" class="aspect-square w-1/3" />
+  <div ref="container" class="h-full w-full" />
 </template>
 
 <script setup lang="ts">
@@ -21,7 +21,7 @@ onMounted(() => {
     0.1,
     1000,
   );
-  camera.position.set(0, 50, 120);
+  camera.position.set(0, 50, 50);
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setSize(container.value.clientWidth, container.value.clientHeight);
@@ -29,8 +29,20 @@ onMounted(() => {
 
   const light = new THREE.DirectionalLight(0xffffff, 1);
   light.position.set(0, 0, 0);
-  camera.add(light); // 👈 прикрепляем к камере
-  scene.add(camera); // 👈 не забудь добавить камеру как объект сцены
+  camera.add(light);
+  scene.add(camera);
+
+  const scaleModelToFit = (model: THREE.Group) => {
+    const box = new THREE.Box3().setFromObject(model);
+    const size = new THREE.Vector3();
+    box.getSize(size);
+
+    const maxSize = Math.max(size.x, size.y, size.z);
+    const desiredSize = 35;
+
+    const scale = desiredSize / maxSize;
+    model.scale.setScalar(scale);
+  };
 
   function initAmbientLight(): AmbientLight {
     const color = 0xffffff;
@@ -82,6 +94,8 @@ onMounted(() => {
       modelGroup = gltf.scene;
       modelGroup.position.set(0, 0, 0);
 
+      scaleModelToFit(modelGroup);
+
       scene.add(modelGroup);
 
       animate();
@@ -111,7 +125,7 @@ onMounted(() => {
     requestAnimationFrame(animate);
 
     if (modelGroup && !isUserInteracting) {
-      modelGroup.rotation.y += 0.003; // автовращение
+      modelGroup.rotation.y += 0.004;
     }
 
     controls.update();

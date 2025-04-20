@@ -1,5 +1,5 @@
 <template>
-  <header class="flex h-8 w-full bg-black px-3 text-c-white uppercase">
+  <header class="scrolled-block flex h-8 w-full bg-black px-3 text-c-white uppercase">
     <section class="flex w-1/3 items-center justify-start gap-3">
       <NuxtLink to="/">
         <Icon name="gridicons:domains" size="0.9rem" />
