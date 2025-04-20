@@ -12,8 +12,7 @@ const props = defineProps<{
   isNonstop?: boolean;
 }>();
 
-const randomChars: string =
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+=-';
+const randomChars: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+=-';
 const displayedChars = ref<string[]>([]);
 let randomIntervals: number[] = [];
 let randomTimeouts: number[] = [];
@@ -35,8 +34,8 @@ const startAnimation = () => {
 
   const chars = props.text.trim().split('');
   displayedChars.value = Array(chars.length)
-      .fill('')
-      .map(() => getRandomChar());
+    .fill('')
+    .map(() => getRandomChar());
 
   chars.forEach((char: string, index: number) => {
     // Обновляем каждый символ случайным
@@ -47,16 +46,15 @@ const startAnimation = () => {
     if (!props.isNonstop) {
       // ⏳ Задержка 1000мс (1 сек) + постепенная анимация
       randomTimeouts[index] = window.setTimeout(
-          () => {
-            clearInterval(randomIntervals[index]);
-            displayedChars.value[index] = char;
-          },
-          300 + (index + 1) * 120 // ← добавляем 1 секунду перед заменой
+        () => {
+          clearInterval(randomIntervals[index]);
+          displayedChars.value[index] = char;
+        },
+        300 + (index + 1) * 120, // ← добавляем 1 секунду перед заменой
       );
     }
   });
 };
-
 
 watch(
   () => props.text,

@@ -1,35 +1,35 @@
 <template>
   <h2
-      class="text-c-white text-[2rem] font-title font-bold ml-3 mb-3"
-      :class="{ highlighted : isHighlighted }"
+    class="mb-3 ml-3 font-title text-[2rem] font-bold text-c-white"
+    :class="{ highlighted: isHighlighted }"
   >
-    <ScrambledText :text="$t('pageTitle.links')"/>
+    <ScrambledText :text="$t('pageTitle.links')" />
   </h2>
   <div
-      class="w-full grid grid-cols-3 grid-rows-2 gap-[1px] overflow-hidden rounded-sm relative p-[1px] bg-neutral-900"
-      :class="{ highlighted : isHighlighted }"
-      id="contactsBlock"
+    class="relative grid w-full grid-cols-3 grid-rows-2 gap-[1px] overflow-hidden rounded-sm bg-neutral-900 p-[1px]"
+    :class="{ highlighted: isHighlighted }"
+    id="contactsBlock"
   >
     <div
-        ref="lightCircle"
-        class="z-10 w-1/3 aspect-square rounded-full duration-100 ease-linear  absolute pointer-events-none"
-        :style="{
-          transform: `translate(${lightCirclePosition.x}px, ${lightCirclePosition.y}px)`,
-          background: `radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%)`,
-        }"
+      ref="lightCircle"
+      class="pointer-events-none absolute z-10 aspect-square w-1/3 rounded-full duration-100 ease-linear"
+      :style="{
+        transform: `translate(${lightCirclePosition.x}px, ${lightCirclePosition.y}px)`,
+        background: `radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%)`,
+      }"
     />
 
     <a
-        v-for="item in contactLinks"
-        :key="item.title"
-        :href="item.href"
-        target="_blank"
-        class="z-11 rounded-sm cursor-pointer py-1 px-3 uppercase bg-c-dark hover:bg-neutral-800 "
+      v-for="item in contactLinks"
+      :key="item.title"
+      :href="item.href"
+      target="_blank"
+      class="z-11 cursor-pointer rounded-sm bg-c-dark px-3 py-1 uppercase hover:bg-neutral-800"
     >
-      <div class="w-full flex gap-1 items-center">
+      <div class="flex w-full items-center gap-1">
         <span class="text-[0.65rem]">{{ $t(item.title) }}</span>
-        <Icon :name="item.iconName" size="0.7rem"/>
-        <Icon name="material-symbols:arrow-outward" size="0.7rem" style="margin-left: auto"/>
+        <Icon :name="item.iconName" size="0.7rem" />
+        <Icon name="material-symbols:arrow-outward" size="0.7rem" style="margin-left: auto" />
       </div>
       <span class="text-neutral-500">{{ item.description }}</span>
     </a>
@@ -37,19 +37,43 @@
 </template>
 
 <script setup lang="ts">
-import {useContacts} from "~/components/Contacts/useContacts";
+import { useContacts } from '~/components/Contacts/useContacts';
 
-const { isHighlighted } = useContacts()
-
+const { isHighlighted } = useContacts();
 
 const contactLinks = [
-  {title: 'contacts.github', description: '/boybutterfly1', href: 'https://github.com/boybutterfly1', iconName: 'mdi:github-box'},
-  {title: 'contacts.telegram', description: '@boybutterfly1', href: ':', iconName: 'ri:telegram-2-fill'},
-  {title: 'contacts.email', description: 'boybutterfly1@gmail.com', href: 'mailto:', iconName: 'material-symbols:mail'},
-  {title: 'contacts.twitter', description: '', href: ':', iconName: 'hugeicons:new-twitter'},
-  {title: 'contacts.instagram', description: '@boybutterfly1', href: ':', iconName: 'mdi:instagram'},
-  {title: 'contacts.discord', description: 'boybutterfly1', href: ':', iconName: 'ic:baseline-discord'},
-]
+  {
+    title: 'contacts.github',
+    description: '/boybutterfly1',
+    href: 'https://github.com/boybutterfly1',
+    iconName: 'mdi:github-box',
+  },
+  {
+    title: 'contacts.telegram',
+    description: '@boybutterfly1',
+    href: ':',
+    iconName: 'ri:telegram-2-fill',
+  },
+  {
+    title: 'contacts.email',
+    description: 'boybutterfly1@gmail.com',
+    href: 'mailto:',
+    iconName: 'material-symbols:mail',
+  },
+  { title: 'contacts.twitter', description: '', href: ':', iconName: 'hugeicons:new-twitter' },
+  {
+    title: 'contacts.instagram',
+    description: '@boybutterfly1',
+    href: ':',
+    iconName: 'mdi:instagram',
+  },
+  {
+    title: 'contacts.discord',
+    description: 'boybutterfly1',
+    href: ':',
+    iconName: 'ic:baseline-discord',
+  },
+];
 
 const lightCircle = ref<HTMLDivElement | null>(null);
 const lightCirclePosition = ref({ x: 0, y: 0 });
@@ -67,32 +91,44 @@ const onMouseMove = (event: MouseEvent) => {
   lightCirclePosition.value = { x, y };
 };
 
-
 onMounted(() => {
-  const footerBlock = document.getElementById("footerBlock");
+  const footerBlock = document.getElementById('footerBlock');
   if (!footerBlock) return;
 
-  window.addEventListener("mousemove", onMouseMove);
+  window.addEventListener('mousemove', onMouseMove);
 
   onUnmounted(() => {
-    window.removeEventListener("mousemove", onMouseMove);
+    window.removeEventListener('mousemove', onMouseMove);
   });
 });
-
-
 </script>
 
 <style scoped>
 .highlighted {
   animation: flash-in 0.7s ease-out;
-  transition: opacity 0.2s ease, filter 0.2s ease, background 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    filter 0.2s ease,
+    background 0.2s ease;
 }
 
 @keyframes flash-in {
-  0% { opacity: 1; }
-  25% { opacity: 0.5; }
-  50% { opacity: 1; filter: brightness(150%); }
-  75% { opacity: 0.5; filter: brightness(100%); }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(150%);
+  }
+  75% {
+    opacity: 0.5;
+    filter: brightness(100%);
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>

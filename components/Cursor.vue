@@ -1,40 +1,31 @@
 <template>
   <div class="cursor">
-    <div
-        class="cursor-line horizontal"
-        :style="{ transform: `translate3d(0, ${y}px, 0)` }"
-    />
-    <div
-        class="cursor-line vertical"
-        :style="{ transform: `translate3d(${x}px, 0, 0)` }"
-    />
-    <div
-        class="cursor-center"
-        :style="{ transform: `translate3d(${x - 27}px, ${y - 27}px, 0)` }"
-    />
+    <div class="cursor-line horizontal" :style="{ transform: `translate3d(0, ${y}px, 0)` }" />
+    <div class="cursor-line vertical" :style="{ transform: `translate3d(${x}px, 0, 0)` }" />
+    <div class="cursor-center" :style="{ transform: `translate3d(${x - 27}px, ${y - 27}px, 0)` }" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue';
 
-const x = ref(0)
-const y = ref(0)
+const x = ref(0);
+const y = ref(0);
 
 const handleMouseMove = (e: MouseEvent) => {
-  x.value = e.clientX
-  y.value = e.clientY
-}
+  x.value = e.clientX;
+  y.value = e.clientY;
+};
 
 onMounted(() => {
-  x.value = window.innerWidth / 2
-  y.value = window.innerHeight / 2
-  window.addEventListener('mousemove', handleMouseMove)
-})
+  x.value = window.innerWidth / 2;
+  y.value = window.innerHeight / 2;
+  window.addEventListener('mousemove', handleMouseMove);
+});
 
 onUnmounted(() => {
-  window.removeEventListener('mousemove', handleMouseMove)
-})
+  window.removeEventListener('mousemove', handleMouseMove);
+});
 </script>
 
 <style scoped>

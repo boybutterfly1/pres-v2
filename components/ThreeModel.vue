@@ -1,39 +1,44 @@
 <template>
-  <div ref="container" class="w-1/3 aspect-square" />
+  <div ref="container" class="aspect-square w-1/3" />
 </template>
 
 <script setup lang="ts">
-import * as THREE from 'three'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import { onMounted, ref } from 'vue'
-import {AmbientLight, DirectionalLight} from "three";
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { onMounted, ref } from 'vue';
+import { AmbientLight, DirectionalLight } from 'three';
 
-const container = ref<HTMLDivElement | null>(null)
+const container = ref<HTMLDivElement | null>(null);
 
 onMounted(() => {
-  if (!container.value) return
+  if (!container.value) return;
 
-  const scene = new THREE.Scene()
-  const camera = new THREE.PerspectiveCamera(75, container.value.clientWidth / container.value.clientHeight, 0.1, 1000)
-  camera.position.set(0, 50, 120)
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    container.value.clientWidth / container.value.clientHeight,
+    0.1,
+    1000,
+  );
+  camera.position.set(0, 50, 120);
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
-  renderer.setSize(container.value.clientWidth, container.value.clientHeight)
-  container.value.appendChild(renderer.domElement)
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setSize(container.value.clientWidth, container.value.clientHeight);
+  container.value.appendChild(renderer.domElement);
 
-  const light = new THREE.DirectionalLight(0xffffff, 1)
-  light.position.set(0, 0, 0)
-  camera.add(light)          // 👈 прикрепляем к камере
-  scene.add(camera)          // 👈 не забудь добавить камеру как объект сцены
+  const light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(0, 0, 0);
+  camera.add(light); // 👈 прикрепляем к камере
+  scene.add(camera); // 👈 не забудь добавить камеру как объект сцены
 
   function initAmbientLight(): AmbientLight {
-    const color = 0xFFFFFF;
+    const color = 0xffffff;
     const intensity = 1;
     return new THREE.AmbientLight(color, intensity);
   }
   function initDirectionalLight(): DirectionalLight {
-    const color = 0xFFFFFF;
+    const color = 0xffffff;
     const intensity = 1;
     const light = new THREE.DirectionalLight(color, intensity);
     light.position.set(0, 10, 0);
@@ -50,42 +55,42 @@ onMounted(() => {
 
     return light;
   }
-  const directionalLight = initDirectionalLight()
-  const ambientLight = initAmbientLight()
+  const directionalLight = initDirectionalLight();
+  const ambientLight = initAmbientLight();
   scene.add(ambientLight);
   scene.add(directionalLight);
 
-  const controls = new OrbitControls(camera, renderer.domElement)
-  controls.enableDamping = true
-  controls.enableZoom = false
-  controls.dampingFactor = 0.05
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.enableZoom = false;
+  controls.dampingFactor = 0.05;
 
-  let isUserInteracting = false
+  let isUserInteracting = false;
   controls.addEventListener('start', () => {
-    isUserInteracting = true
-  })
+    isUserInteracting = true;
+  });
   controls.addEventListener('end', () => {
-    isUserInteracting = false
-  })
+    isUserInteracting = false;
+  });
 
-  let modelGroup: THREE.Group | null = null
+  let modelGroup: THREE.Group | null = null;
 
-  const loader = new GLTFLoader()
+  const loader = new GLTFLoader();
   loader.load(
-      '/model/globe.glb',
-      (gltf) => {
-        modelGroup = gltf.scene
-        modelGroup.position.set(0,0,0)
+    '/model/globe.glb',
+    (gltf) => {
+      modelGroup = gltf.scene;
+      modelGroup.position.set(0, 0, 0);
 
-        scene.add(modelGroup)
+      scene.add(modelGroup);
 
-        animate()
-      },
-      undefined,
-      (error) => {
-        console.error('Ошибка загрузки модели:', error)
-      }
-  )
+      animate();
+    },
+    undefined,
+    (error) => {
+      console.error('Ошибка загрузки модели:', error);
+    },
+  );
 
   // const loader = new OBJLoader();
   // loader.load(
@@ -103,24 +108,23 @@ onMounted(() => {
   // );
 
   const animate = () => {
-    requestAnimationFrame(animate)
+    requestAnimationFrame(animate);
 
     if (modelGroup && !isUserInteracting) {
-      modelGroup.rotation.y += 0.003 // автовращение
+      modelGroup.rotation.y += 0.003; // автовращение
     }
 
-    controls.update()
-    renderer.render(scene, camera)
-  }
+    controls.update();
+    renderer.render(scene, camera);
+  };
 
   window.addEventListener('resize', () => {
-    if (!container.value) return
-    camera.aspect = container.value.clientWidth / container.value.clientHeight
-    camera.updateProjectionMatrix()
-    renderer.setSize(container.value.clientWidth, container.value.clientHeight)
-  })
-})
+    if (!container.value) return;
+    camera.aspect = container.value.clientWidth / container.value.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.value.clientWidth, container.value.clientHeight);
+  });
+});
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -1,19 +1,25 @@
 <template>
   <div
-      class="about w-full sticky top-8 h-[calc(100dvh-4.5rem)] rounded-xl flex flex-col items-start justify-start p-5 bg-c-white"
-      ref="aboutRef"
+    class="about sticky top-8 flex h-[calc(100dvh-4.5rem)] w-full flex-col items-start justify-start rounded-xl bg-c-white p-5"
+    ref="aboutRef"
   >
-    <div class="start flex flex-col h-full w-full">
-      <h2 class="text-c-dark text-[3rem] font-title font-bold mb-20">
-        <ScrambledText :text="$t('pageTitle.about')"/>
+    <div class="start flex h-full w-full flex-col">
+      <h2 class="mb-20 font-title text-[3rem] font-bold text-c-dark">
+        <ScrambledText :text="$t('pageTitle.about')" />
       </h2>
-      <span class=" text-c-dark inline-block text-[1rem] z-20 uppercase  w-2/3">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <span class="z-20 inline-block w-2/3 text-[1rem] text-c-dark uppercase">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </span>
-      <div class="w-full h-full flex items-center justify-center ">
-        <div class="relative w-1/4 h-full flex items-center rounded-sm ">
-          <span class="absolute top-10 right-full mr-1 text-right w-15 font-black text-c-dark">[ {{ $t("decoration.hi") }} ]</span>
-          <img src="/images/photo.png" alt="my photo" class=" rounded-sm">
+      <div class="flex h-full w-full items-center justify-center">
+        <div class="relative flex h-full w-1/4 items-center rounded-sm">
+          <span class="absolute top-10 right-full mr-1 w-15 text-right font-black text-c-dark"
+            >[ {{ $t('decoration.hi') }} ]</span
+          >
+          <img src="/images/photo.png" alt="my photo" class="rounded-sm" />
         </div>
       </div>
     </div>
@@ -21,17 +27,16 @@
 </template>
 
 <script setup lang="ts">
-import {useRouterFallback} from "~/components/RouterFallback/useRouterFallback";
+import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
 
-const { setPending } = useRouterFallback()
-const aboutRef = ref<HTMLElement | null>(null)
+const { setPending } = useRouterFallback();
+const aboutRef = ref<HTMLElement | null>(null);
 
-useHead({title: 'BBTRFL1 ◦ About'})
+useHead({ title: 'BBTRFL1 ◦ About' });
 onMounted(() => {
-  setPending(false)
-  useScrollScale(aboutRef.value)
-})
-
+  setPending(false);
+  useScrollScale(aboutRef.value);
+});
 </script>
 
 <style scoped>

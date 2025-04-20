@@ -1,21 +1,21 @@
 <template>
-  <header class="w-full h-8 px-3 bg-black text-c-white flex uppercase">
-    <section class="w-1/3 flex items-center gap-3 justify-start">
+  <header class="flex h-8 w-full bg-black px-3 text-c-white uppercase">
+    <section class="flex w-1/3 items-center justify-start gap-3">
       <NuxtLink to="/">
-        <Icon name="gridicons:domains" size="0.9rem"/>
+        <Icon name="gridicons:domains" size="0.9rem" />
       </NuxtLink>
       <span>{{ currentRoute }}</span>
     </section>
-    <section class="w-1/3 flex items-center justify-center">
+    <section class="flex w-1/3 items-center justify-center">
       <span>{{ formattedDate }}</span>
     </section>
-    <section class="w-1/3 flex items-center gap-1 justify-end">
+    <section class="flex w-1/3 items-center justify-end gap-1">
       <button
-          @click="scrollToBlock"
-          class="flex items-center uppercase p-1 bg-neutral-800 rounded-sm cursor-pointer hover:bg-white hover:text-black duration-300"
+        @click="scrollToBlock"
+        class="flex cursor-pointer items-center rounded-sm bg-neutral-800 p-1 uppercase duration-300 hover:bg-white hover:text-black"
       >
         <span>{{ $t('header.contact') }}</span>
-        <Icon name="mynaui:arrow-long-down-solid" size="0.8rem"/>
+        <Icon name="mynaui:arrow-long-down-solid" size="0.8rem" />
       </button>
       <NuxtLink :to="$switchLocalePath(newLocale)">{{ newLocale }}</NuxtLink>
     </section>
@@ -23,27 +23,27 @@
 </template>
 
 <script setup lang="ts">
-import {useContacts} from "~/components/Contacts/useContacts";
+import { useContacts } from '~/components/Contacts/useContacts';
 
-const formattedDate = ref('')
-let intervalId: number
+const formattedDate = ref('');
+let intervalId: number;
 
-const { scrollToBlock } = useContacts()
-const route = useRoute()
-const { locale, t } = useI18n()
+const { scrollToBlock } = useContacts();
+const route = useRoute();
+const { locale, t } = useI18n();
 
 const newLocale = computed(() => {
   if (locale.value === 'en') {
-    return 'ru'
-  } else return 'en'
-})
+    return 'ru';
+  } else return 'en';
+});
 
 const currentRoute = computed<string>(() => {
-  return route.name ? route.name.toString() : ''
-})
+  return route.name ? route.name.toString() : '';
+});
 
 const updateDate = () => {
-  const now = new Date()
+  const now = new Date();
   const formatter = new Intl.DateTimeFormat(locale.value, {
     year: '2-digit',
     month: '2-digit',
@@ -52,27 +52,23 @@ const updateDate = () => {
     minute: '2-digit',
     second: '2-digit',
     hour12: false,
-  })
+  });
 
-  const parts = formatter.formatToParts(now)
+  const parts = formatter.formatToParts(now);
 
-  const getPart = (type: string) =>
-      parts.find(p => p.type === type)?.value ?? ''
+  const getPart = (type: string) => parts.find((p) => p.type === type)?.value ?? '';
 
-  formattedDate.value = `${t('header.date.M')}${getPart('month')} ${t('header.date.D')}${getPart('day')} ${t('header.date.Y')}${getPart('year')} ${t('header.date.T')}${getPart('hour')}:${getPart('minute')}:${getPart('second')} `
-}
-
+  formattedDate.value = `${t('header.date.M')}${getPart('month')} ${t('header.date.D')}${getPart('day')} ${t('header.date.Y')}${getPart('year')} ${t('header.date.T')}${getPart('hour')}:${getPart('minute')}:${getPart('second')} `;
+};
 
 onMounted(() => {
-  updateDate()
-  intervalId = setInterval(updateDate, 1000)
-})
+  updateDate();
+  intervalId = setInterval(updateDate, 1000);
+});
 
 onUnmounted(() => {
-  clearInterval(intervalId)
-})
+  clearInterval(intervalId);
+});
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
