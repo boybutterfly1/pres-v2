@@ -106,7 +106,9 @@ const projectsList = [
   },
 ];
 
-useHead({ title: 'BBTRFL1 ◦ Projects' });
+const { t } = useI18n();
+
+useHead({ title: `BTRFL1 ◦ ${t('navigation.projects')}` });
 onMounted(() => {
   setPending(false);
 });

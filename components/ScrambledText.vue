@@ -12,7 +12,12 @@ const props = defineProps<{
   isNonstop?: boolean;
 }>();
 
-const randomChars: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+=-';
+const { locale } = useI18n();
+
+const randomChars: string =
+  locale.value === 'en'
+    ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+=-'
+    : 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ0123456789!@#$%^&*()_+=-';
 const displayedChars = ref<string[]>([]);
 let randomIntervals: number[] = [];
 let randomTimeouts: number[] = [];
@@ -50,7 +55,7 @@ const startAnimation = () => {
           clearInterval(randomIntervals[index]);
           displayedChars.value[index] = char;
         },
-        300 + (index + 1) * 120, // ← добавляем 1 секунду перед заменой
+        500 + (index + 1) * 120, // ← добавляем 1 секунду перед заменой
       );
     }
   });

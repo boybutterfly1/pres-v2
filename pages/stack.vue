@@ -1,9 +1,11 @@
 <template>
   <div
-    class="relative flex h-fit min-h-[calc(100dvh-4.5rem)] w-full flex-col items-start justify-start overflow-hidden rounded-xl bg-c-white py-5"
+    class="relative flex h-fit min-h-[calc(100dvh-4.5rem)] w-full flex-col items-start justify-start rounded-xl bg-c-white p-4 sm:p-6 md:p-8"
   >
     <div class="start relative flex h-full w-full flex-col">
-      <h2 class="px-5 font-title text-[3rem] font-bold text-c-dark">
+      <h2
+        class="mb-10 font-title text-2xl font-bold text-c-dark sm:mb-16 sm:text-3xl md:mb-20 md:text-[3rem]"
+      >
         <ScrambledText :text="$t('pageTitle.stack')" />
       </h2>
 
@@ -72,7 +74,10 @@ const setIcon = (icon: string) => {
 
 const { setPending } = useRouterFallback();
 
-useHead({ title: 'BBTRFL1 ◦ Stack' });
+const { t } = useI18n();
+
+useHead({ title: `BTRFL1 ◦ ${t('navigation.stack')}` });
+
 onMounted(() => {
   setPending(false);
 

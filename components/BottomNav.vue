@@ -3,7 +3,7 @@
     <section class="w-1/3">
       <NuxtLink :to="localePath('/')" class="flex cursor-pointer items-center justify-start gap-1">
         <img src="/public/images/logo.webp" width="30" alt="logo" />
-        <span class="font-title text-[1rem]">bbttrfl1</span>
+        <span class="font-title text-[1rem]">btrfl1</span>
       </NuxtLink>
     </section>
     <nav class="flex w-1/3 items-center justify-center gap-3 text-[0.65rem]">

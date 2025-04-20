@@ -34,6 +34,9 @@
   },
   "decoration": {
     "hi": "HI",
-    "rights": "This website was assembled aboard an orbital station above Ganymede using nanocode and quantum poetry. Any attempt at replication without the approval of the Intergalactic Council may result in temporal anomalies and disruptions in the fabric of taste. ©2025 • BBTRFL1 — a registered hash in the chrono-archive of Sector 7G."
+    "rights": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget vehicula enim, sit amet tincidunt lorem. Phasellus auctor elit vel mauris tincidunt luctus. Etiam enim nibh, lobortis a elementum quis, tincidunt et metus. Vestibulum ac.\n\n"
+  },
+  "aboutPage": {
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut\n        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco\n        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in\n        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   }
 }
