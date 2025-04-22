@@ -26,7 +26,9 @@
               :alt="`${project.name} image`"
               class="w-full rounded-md object-cover"
               format="webp"
+              size="100%"
               :placeholder="true"
+              quality="10"
               loading="lazy"
             />
           </div>
