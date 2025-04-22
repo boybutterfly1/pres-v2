@@ -39,6 +39,7 @@
 
 <script setup lang="ts">
 import { useContacts } from '~/components/Contacts/useContacts';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 const { isHighlighted } = useContacts();
 

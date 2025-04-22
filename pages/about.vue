@@ -30,6 +30,8 @@
 
 <script setup lang="ts">
 import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
+import { useHead, useI18n, useScrollScale } from '#imports';
+import { onMounted, ref } from 'vue';
 
 const { t } = useI18n();
 const { setPending } = useRouterFallback();

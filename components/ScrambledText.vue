@@ -6,6 +6,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue';
+import { useI18n } from '#imports';
 
 const props = defineProps<{
   text: string;
@@ -43,19 +44,17 @@ const startAnimation = () => {
     .map(() => getRandomChar());
 
   chars.forEach((char: string, index: number) => {
-    // Обновляем каждый символ случайным
     randomIntervals[index] = window.setInterval(() => {
       displayedChars.value[index] = getRandomChar();
     }, 80);
 
     if (!props.isNonstop) {
-      // ⏳ Задержка 1000мс (1 сек) + постепенная анимация
       randomTimeouts[index] = window.setTimeout(
         () => {
           clearInterval(randomIntervals[index]);
           displayedChars.value[index] = char;
         },
-        500 + (index + 1) * 120, // ← добавляем 1 секунду перед заменой
+        500 + (index + 1) * 120,
       );
     }
   });

@@ -24,6 +24,9 @@
 
 <script setup lang="ts">
 import { useContacts } from '~/components/Contacts/useContacts';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
+import { useI18n } from '#imports';
+import { useRoute } from 'vue-router';
 
 const formattedDate = ref('');
 let intervalId: number;

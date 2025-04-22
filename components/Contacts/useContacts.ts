@@ -1,3 +1,5 @@
+import { ref } from 'vue';
+
 const isHighlighted = ref<boolean>(false);
 
 export function useContacts() {

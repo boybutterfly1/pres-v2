@@ -19,6 +19,7 @@
 
 <script setup lang="ts">
 import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
+import { useRouter } from '#app';
 
 const router = useRouter();
 const { isPending, setPending } = useRouterFallback();

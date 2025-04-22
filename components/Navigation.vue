@@ -25,6 +25,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import { useLocalePath } from '#i18n';
 
 const localePath = useLocalePath();
 

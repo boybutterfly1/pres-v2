@@ -22,6 +22,8 @@
 </template>
 
 <script setup lang="ts">
+import { useLocalePath } from '#i18n';
+
 const navItems = [
   { to: '/', name: 'navigation.intro' },
   { to: '/about', name: 'navigation.about' },

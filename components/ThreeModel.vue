@@ -9,6 +9,10 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { onMounted, ref } from 'vue';
 import { AmbientLight, DirectionalLight } from 'three';
 
+const emits = defineEmits<{
+  (emit: 'loaded'): void;
+}>();
+
 const container = ref<HTMLDivElement | null>(null);
 
 onMounted(() => {
@@ -99,6 +103,7 @@ onMounted(() => {
       scene.add(modelGroup);
 
       animate();
+      emits('loaded');
     },
     undefined,
     (error) => {

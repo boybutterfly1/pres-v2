@@ -8,6 +8,7 @@
 <script setup lang="ts">
 import { gsap } from 'gsap';
 import TextPlugin from 'gsap/TextPlugin';
+import { onMounted } from 'vue';
 
 const props = defineProps<{
   stringArr: string[];

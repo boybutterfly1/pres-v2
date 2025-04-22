@@ -47,7 +47,8 @@
 <script setup lang="ts">
 import { loadIcons } from '@iconify/vue';
 import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import { useHead, useI18n, useScrollScale } from '#imports';
 
 const stackList = [
   { name: 'HTML', icon: 'devicon:html5' },

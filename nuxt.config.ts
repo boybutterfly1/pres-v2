@@ -1,17 +1,20 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite';
-import svgLoader from 'vite-svg-loader'
+import svgLoader from 'vite-svg-loader';
 
 export default defineNuxtConfig({
   ssr: true,
+  imports: {
+    autoImport: false,
+  },
   compatibilityDate: '2024-11-01',
   future: {
     compatibilityVersion: 4,
   },
   router: {
     options: {
-      scrollBehaviorType: "smooth"
-    }
+      scrollBehaviorType: 'smooth',
+    },
   },
   devtools: { enabled: false },
   experimental: {
@@ -43,16 +46,16 @@ export default defineNuxtConfig({
     locales: [
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'ru', name: 'Russian', file: 'ru.json' },
-    ]
+    ],
   },
   googleFonts: {
     families: {
       Unbounded: [300],
-      "Victor Mono": [400, 700, 900],
+      'Victor Mono': [400, 700, 900],
     },
   },
-  css: ['./assets/css/main.css', "./assets/fonts/fonts.css"],
+  css: ['./assets/css/main.css', './assets/fonts/fonts.css'],
   vite: {
     plugins: [tailwindcss(), svgLoader()],
-  }
+  },
 });

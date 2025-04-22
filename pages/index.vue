@@ -23,6 +23,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 // import VideoFrame from '~/components/VideoFrame.vue';
 import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
+import { useI18n, useHead } from '#imports';
 
 const { t } = useI18n();
 const { setPending } = useRouterFallback();

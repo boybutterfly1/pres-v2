@@ -23,7 +23,9 @@
     </div>
 
     <transition name="fade">
-      <LazyThreeModel
+      <component
+        :is="ThreeModel"
+        @loaded="isVisible = true"
         v-if="isVisible"
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       />
@@ -33,8 +35,11 @@
 
 <script setup lang="ts">
 import { useIntersectionObserver } from '@vueuse/core';
+import { type Component, defineAsyncComponent, onMounted, ref, shallowRef } from 'vue';
 
-const isVisible = shallowRef(false);
+const ThreeModel = shallowRef<Component | null>(null);
+
+const isVisible = ref<boolean>(true);
 const footerRef = ref<HTMLElement | null>(null);
 
 onMounted(() => {
@@ -42,7 +47,7 @@ onMounted(() => {
     footerRef,
     ([entry]) => {
       if (entry?.isIntersecting) {
-        isVisible.value = true;
+        ThreeModel.value = defineAsyncComponent(() => import('~/components/ThreeModel.vue'));
         stop();
       }
     },
