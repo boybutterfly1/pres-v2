@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import AppFooter from '~/components/AppFooter.vue';
-import Info from '~/components/Info.vue';
+// import Info from '~/components/Info.vue';
 </script>
 
 <style scoped></style>

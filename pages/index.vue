@@ -13,15 +13,15 @@
 
     <PixiApp class="absolute top-0 left-0 z-10 h-full w-full" />
 
-    <VideoFrame
-      class="fixed bottom-8 left-3 z-11 w-[120px] sm:right-3 sm:bottom-12 sm:w-[140px] md:w-[160px]"
-    />
+    <!--    <VideoFrame-->
+    <!--      class="fixed bottom-8 left-3 z-11 w-[120px] sm:right-3 sm:bottom-12 sm:w-[140px] md:w-[160px]"-->
+    <!--    />-->
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
-import VideoFrame from '~/components/VideoFrame.vue';
+// import VideoFrame from '~/components/VideoFrame.vue';
 import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
 
 const { t } = useI18n();
