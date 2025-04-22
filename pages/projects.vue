@@ -19,7 +19,7 @@
           class="scrolled-block project mb-4 grid w-full grid-cols-2 sm:mb-6 md:mb-8 md:w-2/3"
         >
           <div class="flex flex-col gap-3 p-2">
-            <NuxtImg
+            <LazyNuxtImg
               v-for="(img, index) in project.imgList"
               :key="index"
               :src="img"
