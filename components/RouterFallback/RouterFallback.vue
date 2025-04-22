@@ -2,7 +2,7 @@
   <transition name="fade">
     <div
       v-if="isPending"
-      class="absolute top-0 z-30 h-[calc(100dvh-4.5rem)] w-full overflow-hidden rounded-xl bg-c-white"
+      class="absolute top-0 z-[999] h-[calc(100dvh-4.5rem)] w-full overflow-hidden rounded-xl bg-c-white"
     >
       <span class="loader"></span>
       <div class="absolute top-0 left-0 flex h-full w-8 flex-col items-center justify-between py-3">
