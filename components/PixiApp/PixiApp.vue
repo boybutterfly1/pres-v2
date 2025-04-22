@@ -9,7 +9,9 @@ import { Application } from 'pixi.js';
 import { addGradient } from '~/components/PixiApp/addGradient';
 import { onMounted, onUnmounted, ref } from 'vue';
 
-const emits = defineEmits<{}>();
+const emits = defineEmits<{
+  (emit: 'loaded'): void;
+}>();
 
 const wrapper = ref<HTMLDivElement | null>(null);
 const pixiContainer = ref<HTMLCanvasElement | null>(null);
@@ -28,6 +30,7 @@ async function setupPixi(width: number, height: number) {
   });
 
   addGradient(app);
+  emits('loaded');
 }
 
 function resize() {

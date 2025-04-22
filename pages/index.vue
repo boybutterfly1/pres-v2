@@ -11,7 +11,7 @@
       <TypeWriter :string-arr="[$t('intro.line1'), $t('intro.line2')]" />
     </span>
 
-    <PixiApp class="absolute top-0 left-0 z-10 h-full w-full" />
+    <PixiApp @loaded="setPending(false)" class="absolute top-0 left-0 z-10 h-full w-full" />
 
     <!--    <VideoFrame-->
     <!--      class="fixed bottom-8 left-3 z-11 w-[120px] sm:right-3 sm:bottom-12 sm:w-[140px] md:w-[160px]"-->
@@ -39,7 +39,6 @@ const handleScroll = () => {
 useHead({ title: `BTRFL1 ◦ ${t('navigation.intro')}` });
 
 onMounted(() => {
-  setPending(false);
   window.addEventListener('scroll', handleScroll);
 });
 

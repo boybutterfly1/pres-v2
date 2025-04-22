@@ -9,7 +9,7 @@ import {
   Geometry,
   Ticker,
 } from 'pixi.js';
-import { DotFilter } from "pixi-filters";
+import { DotFilter } from 'pixi-filters';
 
 export function addGradient(app: Application) {
   const fragment = `
@@ -67,12 +67,7 @@ export function addGradient(app: Application) {
   app.stage.addChild(container);
 
   const geometry = new Geometry();
-  geometry.addAttribute('aVertexPosition', new Float32Array([
-    -1, -1,
-    1, -1,
-    1,  1,
-    -1,  1
-  ]));
+  geometry.addAttribute('aVertexPosition', new Float32Array([-1, -1, 1, -1, 1, 1, -1, 1]));
   geometry.addIndex([0, 1, 2, 0, 2, 3]);
 
   const filter = new Filter({
@@ -91,7 +86,7 @@ export function addGradient(app: Application) {
 
   container.addChild(mesh);
 
-  const dotFilter = new DotFilter({scale: 10, angle: 0.1, grayscale: false});
+  const dotFilter = new DotFilter({ scale: 10, angle: 0.1, grayscale: false });
   container.filters = [dotFilter];
 
   app.stage.hitArea = app.screen;
@@ -104,7 +99,6 @@ export function addGradient(app: Application) {
 
   filter.resources.localUniforms.uniforms.uMouse.set(0.5, 0.5);
 
-  // Обработчик движения мыши
   app.stage.on('pointermove', (event) => {
     const { x, y } = event.global;
     targetMousePos.set(x / app.screen.width, y / app.screen.height);
@@ -114,7 +108,7 @@ export function addGradient(app: Application) {
   const ticker = Ticker.shared;
   ticker.add(() => {
     if (animationProgress < 1) {
-      animationProgress += ticker.deltaMS / 1000 / animationDuration / 2
+      animationProgress += ticker.deltaMS / 1000 / animationDuration / 2;
       if (animationProgress > 1) animationProgress = 1;
 
       const easeProgress = easeInOutQuad(animationProgress);
