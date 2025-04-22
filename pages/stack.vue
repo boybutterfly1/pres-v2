@@ -45,6 +45,7 @@
 </template>
 
 <script setup lang="ts">
+import { loadIcons } from '@iconify/vue';
 import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
 import { ref } from 'vue';
 
@@ -90,6 +91,7 @@ const stackRef = ref<HTMLElement | null>(null);
 useHead({ title: `BTRFL1 ◦ ${t('navigation.stack')}` });
 
 onMounted(() => {
+  loadIcons(stackList.map((item) => item.icon as string));
   setPending(false);
   useScrollScale(stackRef.value);
 
@@ -147,20 +149,3 @@ onMounted(() => {
   transition: transform 0.1s ease-out;
 }
 </style>
-
-<!--<div class="mt-auto ml-auto flex w-full flex-col sm:w-full md:w-2/3">-->
-<!--<div-->
-<!--  v-for="(item, index) in stackList"-->
-<!--  :key="item.name"-->
-<!--  class="flex w-full flex-col gap-2 border-b border-dotted border-b-transparent px-3 py-2 text-c-dark hover:border-b-c-dark hover:bg-neutral-800 hover:text-c-white sm:flex-row sm:gap-5 sm:px-5 sm:py-1.5"-->
-<!--  @mouseenter="setIcon(item.icon)"-->
-<!--  @mouseleave="setIcon('')"-->
-<!--&gt;-->
-<!--          <span class="mt-0.5 whitespace-nowrap md:text-[0.6rem] lg:text-[0.6rem]">-->
-<!--            {{ `00-3.1.${index + 1}` }}-->
-<!--          </span>-->
-<!--  <span class="text-[1rem] font-black whitespace-nowrap sm:text-[1.1rem] md:text-[1.2rem]">-->
-<!--            {{ item.name }}-->
-<!--          </span>-->
-<!--</div>-->
-<!--</div>-->

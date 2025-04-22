@@ -9,6 +9,8 @@ import { Application } from 'pixi.js';
 import { addGradient } from '~/components/PixiApp/addGradient';
 import { onMounted, onUnmounted, ref } from 'vue';
 
+const emits = defineEmits<{}>();
+
 const wrapper = ref<HTMLDivElement | null>(null);
 const pixiContainer = ref<HTMLCanvasElement | null>(null);
 const app = new Application();
