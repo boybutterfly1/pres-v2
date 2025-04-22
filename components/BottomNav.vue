@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-10 w-full items-center bg-black px-3 text-c-white uppercase">
+  <div class="flex h-10 w-full items-center bg-c-dark px-3 text-c-white uppercase">
     <section class="w-1/5">
       <NuxtLink :to="localePath('/')" class="flex cursor-pointer items-center justify-start gap-1">
         <img src="/public/images/logo.webp" alt="logo" class="w-6" />

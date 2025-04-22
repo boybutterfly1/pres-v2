@@ -4,11 +4,11 @@
     ref="stackRef"
   >
     <div class="start flex h-full w-full flex-col">
-      <h2
+      <h1
         class="mb-10 font-title text-2xl font-bold text-c-dark sm:mb-16 sm:text-3xl md:mb-20 md:text-[3rem]"
       >
         <ScrambledText :text="$t('pageTitle.stack')" />
-      </h2>
+      </h1>
 
       <div
         class="scrollbar-hide relative ml-[30%] h-full w-full flex-col overflow-y-scroll py-5"
@@ -33,7 +33,12 @@
       </div>
 
       <transition name="fade">
-        <Icon class="absolute bottom-0 text-c-dark" :name="currentIcon" size="5rem" />
+        <Icon
+          v-if="currentIcon"
+          class="absolute bottom-0 text-c-dark"
+          :name="currentIcon"
+          size="5rem"
+        />
       </transition>
     </div>
   </div>

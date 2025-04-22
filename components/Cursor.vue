@@ -2,7 +2,7 @@
   <div class="cursor">
     <div class="cursor-line horizontal" :style="{ transform: `translate3d(0, ${y}px, 0)` }" />
     <div class="cursor-line vertical" :style="{ transform: `translate3d(${x}px, 0, 0)` }" />
-    <div class="cursor-center" :style="{ transform: `translate3d(${x - 27}px, ${y - 27}px, 0)` }" />
+    <div class="cursor-center" :style="{ transform: `translate3d(${x - 17}px, ${y - 17}px, 0)` }" />
   </div>
 </template>
 
@@ -64,8 +64,8 @@ onUnmounted(() => {
 
 .cursor-center {
   position: absolute;
-  width: 54px;
-  height: 54px;
+  width: 34px;
+  height: 34px;
   background-color: rgba(255, 255, 255, 0.01);
   backdrop-filter: invert(1);
   border-radius: 50%;

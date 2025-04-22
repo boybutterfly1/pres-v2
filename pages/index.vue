@@ -14,7 +14,7 @@
     <PixiApp class="absolute top-0 left-0 z-10 h-full w-full" />
 
     <VideoFrame
-      class="fixed right-2 bottom-8 z-11 w-[120px] sm:right-3 sm:bottom-12 sm:w-[140px] md:w-[160px]"
+      class="fixed bottom-8 left-3 z-11 w-[120px] sm:right-3 sm:bottom-12 sm:w-[140px] md:w-[160px]"
     />
   </div>
 </template>

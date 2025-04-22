@@ -4,11 +4,11 @@
     ref="aboutRef"
   >
     <div class="start flex h-full w-full flex-col">
-      <h2
+      <h1
         class="mb-10 font-title text-2xl font-bold text-c-dark sm:mb-16 sm:text-3xl md:mb-20 md:text-[3rem]"
       >
         <ScrambledText :text="$t('pageTitle.about')" />
-      </h2>
+      </h1>
       <span
         class="z-20 inline-block w-full text-sm leading-relaxed text-c-dark uppercase sm:w-4/5 sm:text-base md:w-2/3 md:text-[1rem]"
       >

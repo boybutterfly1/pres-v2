@@ -1,7 +1,7 @@
 <template>
   <div
     :class="['appear', { show: isVisible }]"
-    class="z-50 flex w-90 flex-col items-start overflow-hidden rounded-lg border-[0.5px] border-c-white bg-black px-2 text-c-white"
+    class="z-50 flex w-90 flex-col items-start overflow-hidden rounded-lg border-[0.5px] border-c-white bg-c-dark px-2 text-c-white"
   >
     <NuxtLink
       v-for="(item, index) in navItems"

@@ -38,5 +38,12 @@
   },
   "aboutPage": {
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut\n        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco\n        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in\n        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  "projectsPage": {
+    "title": "Title",
+    "technology": "technology",
+    "stack": "stack",
+    "description": "description",
+    "whatIDid": "What I did"
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="h-60 w-90 overflow-hidden rounded-lg border-10 border-black bg-black">
+  <div class="h-60 w-90 overflow-hidden rounded-lg border-10 border-c-dark bg-c-dark">
     <video
       class="h-full w-full origin-center transform object-cover"
       autoplay
