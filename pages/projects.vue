@@ -28,7 +28,7 @@
               format="webp"
               size="100%"
               :placeholder="true"
-              quality="10"
+              quality="70"
               loading="lazy"
             />
           </div>
