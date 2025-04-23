@@ -19,18 +19,7 @@
           class="scrolled-block project mb-4 grid w-full grid-cols-2 pt-10 sm:mb-6 md:mb-8 md:w-2/3"
         >
           <div class="flex flex-col gap-3 p-2">
-            <LazyNuxtImg
-              v-for="(img, index) in project.imgList"
-              :key="index"
-              :src="img"
-              :alt="`${project.name} image`"
-              class="w-full rounded-md object-cover"
-              sizes="100vw sm:50vw md:400px"
-              format="webp"
-              :placeholder="true"
-              quality="80"
-              loading="lazy"
-            />
+            <ImageList :img-list="project.imgList" />
           </div>
           <div
             class="right-side sticky top-10 col-start-2 row-start-1 row-end-3 ml-3 flex h-fit flex-col p-2"
@@ -80,6 +69,7 @@
 import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
 import { onMounted, ref } from 'vue';
 import { useHead, useI18n, useScrollScale } from '#imports';
+import ImageList from '~/components/ImageList.vue';
 
 const { t } = useI18n();
 const { setPending } = useRouterFallback();
