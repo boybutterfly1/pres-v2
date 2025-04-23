@@ -18,6 +18,7 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: false },
   experimental: {
+    treeshakeClientOnly: true,
     scanPageMeta: 'after-resolve',
     sharedPrerenderData: false,
     compileTemplate: true,
@@ -57,5 +58,8 @@ export default defineNuxtConfig({
   css: ['./assets/css/main.css', './assets/fonts/fonts.css'],
   vite: {
     plugins: [tailwindcss(), svgLoader()],
+    optimizeDeps: {
+      exclude: ['three'],
+    },
   },
 });

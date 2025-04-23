@@ -11,7 +11,7 @@
       <TypeWriter :string-arr="[$t('intro.line1'), $t('intro.line2')]" />
     </span>
 
-    <PixiApp @loaded="setPending(false)" class="absolute top-0 left-0 z-10 h-full w-full" />
+    <LazyPixiApp @loaded="setPending(false)" class="absolute top-0 left-0 z-10 h-full w-full" />
 
     <!--    <VideoFrame-->
     <!--      class="fixed bottom-8 left-3 z-11 w-[120px] sm:right-3 sm:bottom-12 sm:w-[140px] md:w-[160px]"-->
@@ -20,10 +20,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, defineAsyncComponent } from 'vue';
 // import VideoFrame from '~/components/VideoFrame.vue';
 import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
 import { useI18n, useHead } from '#imports';
+
+const LazyPixiApp = defineAsyncComponent(() => import('~/components/PixiApp/PixiApp.vue'));
 
 const { t } = useI18n();
 const { setPending } = useRouterFallback();
