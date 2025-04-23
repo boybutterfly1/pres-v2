@@ -1,5 +1,13 @@
 <template>
   <div v-for="(img, index) in imgList" :key="index" class="relative w-full">
+    <div
+      v-if="!isLoaded[index]"
+      class="absolute inset-0 z-10 flex items-center justify-center rounded-md border border-dotted border-c-dark bg-gray-100"
+    >
+      <span class="text-gray-400">
+        {{ `[ ${$t('utils.loading')} ]` }}
+      </span>
+    </div>
     <LazyNuxtImg
       :src="img"
       :alt="`${imgAlt(img)} image`"
@@ -51,7 +59,9 @@ const expandImage = (img: string) => {
 };
 
 const handleLoad = (index: number) => {
-  isLoaded.value[index] = true;
+  setTimeout(() => {
+    isLoaded.value[index] = true;
+  }, 1000);
 };
 </script>
 
