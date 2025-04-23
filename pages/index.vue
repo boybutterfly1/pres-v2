@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sticky top-8 flex h-[calc(100dvh-4.5rem)] w-full items-center justify-start rounded-xl p-3 sm:p-5"
+    class="sticky top-8 flex h-[calc(100dvh)] w-full items-center justify-start rounded-xl p-3 sm:p-5"
     ref="indexRef"
   >
     <span
@@ -12,16 +12,11 @@
     </span>
 
     <LazyPixiApp @loaded="setPending(false)" class="absolute top-0 left-0 z-10 h-full w-full" />
-
-    <!--    <VideoFrame-->
-    <!--      class="fixed bottom-8 left-3 z-11 w-[120px] sm:right-3 sm:bottom-12 sm:w-[140px] md:w-[160px]"-->
-    <!--    />-->
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, defineAsyncComponent } from 'vue';
-// import VideoFrame from '~/components/VideoFrame.vue';
 import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
 import { useI18n, useHead } from '#imports';
 
@@ -34,7 +29,7 @@ const indexRef = ref<HTMLElement | null>(null);
 
 const handleScroll = () => {
   const scrollTop = window.scrollY;
-  const triggerPoint = window.innerHeight * 0.43;
+  const triggerPoint = window.innerHeight * 0.48;
 
   translateY.value = scrollTop > triggerPoint ? -(scrollTop - triggerPoint) : 0;
 };

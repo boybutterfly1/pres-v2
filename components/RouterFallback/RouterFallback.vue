@@ -20,13 +20,16 @@
 <script setup lang="ts">
 import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
 import { useRouter } from '#app';
+import { useOverflow } from '~/composables/useOverflow';
 
 const router = useRouter();
 const { isPending, setPending } = useRouterFallback();
+const { stopScroll } = useOverflow();
 
 router.beforeEach((to, from, next) => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   setPending(true);
+  stopScroll();
   setTimeout(() => next(), 500);
 });
 </script>

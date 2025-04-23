@@ -21,7 +21,7 @@
           >
             [ {{ $t('decoration.hi') }} ]
           </span>
-          <ImageList :size="{ width: 102, height: 127 }" :img-list="['/images/my-photo.png']" />
+          <ImageList :img-list="['/images/my-photo.png']" />
         </div>
       </div>
     </div>
@@ -30,11 +30,12 @@
 
 <script setup lang="ts">
 import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
-import { useHead, useI18n, useScrollScale } from '#imports';
+import { useHead, useI18n, useOverflow, useScrollScale } from '#imports';
 import { onMounted, ref } from 'vue';
 
 const { t } = useI18n();
 const { setPending } = useRouterFallback();
+const { resumeScroll } = useOverflow();
 
 const aboutRef = ref<HTMLElement | null>(null);
 

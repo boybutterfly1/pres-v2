@@ -27,15 +27,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useImageExpand } from '~/components/ImageExpanded/useImageExpand';
+import { useOverflow } from '~/composables/useOverflow';
 
 const { imgSrc, setImgSrc } = useImageExpand();
+const { stopScroll } = useOverflow();
 
 defineProps<{
   imgList: string[];
-  size: {
-    width: number;
-    height: number;
-  };
 }>();
 
 const isLoaded = ref<boolean[]>([]);
@@ -46,6 +44,7 @@ const preloadImage = (src: string) => {
 };
 const imgAlt = (img: string): string => img.split('/').at(-1)?.split('.')[0] || '';
 const expandImage = (img: string) => {
+  stopScroll();
   preloadImage(img);
   if (document.startViewTransition) {
     document.startViewTransition(() => {

@@ -1,6 +1,5 @@
 <template>
   <div
-    v-if="imgSrc"
     @click="closeImg"
     class="absolute top-0 left-0 z-90 flex h-screen w-screen cursor-zoom-out items-center justify-center bg-c-white px-10 py-15"
   >
@@ -46,9 +45,10 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, watch } from 'vue';
 import { useImageExpand } from '~/components/ImageExpanded/useImageExpand';
-import { useCursor } from '~/components/Cursor/useCursor';
+import { useOverflow } from '~/composables/useOverflow';
 
 const { imgSrc, resetImgSrc } = useImageExpand();
+const { resumeScroll } = useOverflow();
 
 const zIndexImg = ref<number>(100);
 const isLoaded = ref<boolean>(false);
@@ -64,6 +64,7 @@ const imgAlt = (img: string): string => {
 };
 const closeImg = () => {
   isLoaded.value = false;
+  resumeScroll();
 
   if (document.startViewTransition) {
     document.startViewTransition(() => {
@@ -80,7 +81,9 @@ function handleKeydown(e: KeyboardEvent) {
   }
 }
 
-watch(imgSrc, () => (isLoaded.value = false));
+watch(imgSrc, () => {
+  isLoaded.value = false;
+});
 onMounted(() => {
   document.addEventListener('keydown', handleKeydown);
 });

@@ -14,7 +14,6 @@
 html {
 	scroll-behavior: smooth;
 	scroll-snap-type: y mandatory;
-	scrollbar-gutter: stable;
 }
 body {
 	overscroll-behavior: none;
@@ -48,7 +47,6 @@ body {
 	border: 1px solid #000;
 }
 .scroll-container {
-	scrollbar-gutter: stable;
 	scroll-snap-type: y mandatory;
 }
 .scrolled-block {
