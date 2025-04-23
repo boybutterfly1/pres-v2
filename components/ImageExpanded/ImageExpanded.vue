@@ -33,7 +33,6 @@
         class="absolute inset-0 h-full w-full rounded-xl object-cover transition-opacity"
         format="webp"
         :placeholder="false"
-        sizes="100vw sm:50vw md:400px"
         :style="{
           viewTransitionName: isLoaded ? imgAlt(imgSrc) : 'none',
         }"
