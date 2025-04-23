@@ -2,7 +2,7 @@
   <div v-for="(img, index) in imgList" :key="index" class="relative w-full">
     <div
       v-if="!isLoaded[index]"
-      class="absolute inset-0 z-10 flex items-center justify-center rounded-md border border-dotted border-c-dark bg-gray-100"
+      class="absolute inset-0 z-10 flex cursor-wait items-center justify-center rounded-md border border-dotted border-c-dark bg-gray-100"
     >
       <span class="text-gray-400">
         {{ `[ ${$t('utils.loading')} ]` }}
@@ -11,14 +11,12 @@
     <LazyNuxtImg
       :src="img"
       :alt="`${imgAlt(img)} image`"
-      class="h-full w-full rounded-md object-cover transition-opacity duration-500"
+      class="w-full cursor-zoom-in rounded-md object-cover duration-300 hover:scale-102"
       sizes="100vw sm:50vw md:400px"
       format="webp"
       :placeholder="false"
       quality="50"
       loading="lazy"
-      :width="size.width"
-      :height="size.height"
       @load="handleLoad(index)"
       :style="!imgSrc ? `view-transition-name: ${imgAlt(img)}` : ''"
       @click="expandImage(img)"

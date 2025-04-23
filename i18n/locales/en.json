@@ -47,6 +47,7 @@
     "whatIDid": "What I did"
   },
   "utils": {
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "close": "Close"
   }
 }

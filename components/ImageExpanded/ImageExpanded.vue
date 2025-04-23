@@ -2,7 +2,7 @@
   <div
     v-if="imgSrc"
     @click="closeImg"
-    class="absolute top-0 left-0 z-90 flex h-screen w-screen items-center justify-center bg-c-white p-10"
+    class="absolute top-0 left-0 z-90 flex h-screen w-screen cursor-zoom-out items-center justify-center bg-c-white px-10 py-15"
   >
     <div class="relative flex h-full w-full items-center justify-center">
       <span
@@ -12,25 +12,25 @@
         {{ `[ ${$t('utils.loading')} ]` }}
       </span>
       <NuxtImg
+        @click.stop
         v-show="!isLoaded"
         :src="imgSrc"
         :alt="`${imgAlt(imgSrc)} image`"
-        class="absolute inset-0 h-full w-full rounded-xl object-cover transition-opacity"
+        class="absolute inset-0 h-full w-full cursor-wait rounded-xl object-contain"
         sizes="100vw sm:50vw md:400px"
         format="webp"
         :placeholder="false"
         quality="50"
-        width="344"
-        height="191"
         :style="{
           viewTransitionName: !isLoaded ? imgAlt(imgSrc) : 'none',
         }"
       />
       <NuxtImg
+        @click="closeImg"
         v-show="isLoaded"
         :src="imgSrc"
         :alt="`${imgAlt} image`"
-        class="absolute inset-0 h-full w-full rounded-xl object-cover transition-opacity"
+        class="absolute inset-0 h-full w-full cursor-zoom-out rounded-xl object-contain"
         format="webp"
         :placeholder="false"
         :style="{
@@ -46,6 +46,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, watch } from 'vue';
 import { useImageExpand } from '~/components/ImageExpanded/useImageExpand';
+import { useCursor } from '~/components/Cursor/useCursor';
 
 const { imgSrc, resetImgSrc } = useImageExpand();
 
