@@ -9,14 +9,14 @@
       >
         <div class="scrolled-block" />
         <h1
-          class="mt-4 mb-5 font-title text-2xl font-bold text-c-dark sm:mt-6 sm:mb-14 sm:text-3xl md:mt-8 md:mb-20 md:text-[3rem]"
+          class="mt-4 mb-10 font-title text-2xl font-bold text-c-dark sm:mt-6 sm:text-3xl md:mt-8 md:text-[3rem]"
         >
           <ScrambledText :text="$t('pageTitle.projects')" />
         </h1>
         <div
           v-for="project in projectsList"
           :key="project.name"
-          class="scrolled-block project mb-4 grid w-full grid-cols-2 sm:mb-6 md:mb-8 md:w-2/3"
+          class="scrolled-block project mb-4 grid w-full grid-cols-2 pt-10 sm:mb-6 md:mb-8 md:w-2/3"
         >
           <div class="flex flex-col gap-3 p-2">
             <LazyNuxtImg
@@ -25,20 +25,21 @@
               :src="img"
               :alt="`${project.name} image`"
               class="w-full rounded-md object-cover"
+              sizes="100vw sm:50vw md:400px"
               format="webp"
-              size="100%"
               :placeholder="true"
-              quality="70"
+              quality="80"
               loading="lazy"
             />
           </div>
-          <div class="sticky top-10 ml-3 flex h-fit flex-col p-2">
-            <div class="mb-8 flex items-start gap-1.5">
+          <div
+            class="right-side sticky top-10 col-start-2 row-start-1 row-end-3 ml-3 flex h-fit flex-col p-2"
+          >
+            <div class="mb-8 flex flex-col items-start gap-1.5">
               <span class="mt-1">{{ $t('projectsPage.title') }}</span>
               <h2 class="font-title text-xl font-bold">[ {{ project.name }} ]</h2>
             </div>
-
-            <div class="flex items-start gap-1.5">
+            <div class="flex flex-col items-start gap-1.5">
               <span class="mt-0.5">{{ $t('projectsPage.technology') }}</span>
               <h3 class="mb-3 text-[0.85rem] font-bold">{{ $t('projectsPage.stack') }}</h3>
             </div>

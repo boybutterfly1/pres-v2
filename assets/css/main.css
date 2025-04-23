@@ -13,22 +13,21 @@
 }
 html {
 	scroll-behavior: smooth;
-	scrollbar-gutter: stable;
 	scroll-snap-type: y mandatory;
+	scrollbar-gutter: stable;
 }
 body {
 	overscroll-behavior: none;
 	background-color: black;
 	position: relative;
-	overflow-x: clip;
 	display: flex;
-	width: 100%;
-	height: 100%;
 	font-size: 0.55rem;
+	overflow-x: clip;
 	font-family: var(--font-main), sans-serif;
 	font-weight: lighter;
 	text-transform: uppercase;
 	color: var(--color-c-white);
+	scrollbar-gutter: stable;
 }
 .scrollbar-hide::-webkit-scrollbar {
 	display: none;
