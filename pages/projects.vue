@@ -19,7 +19,7 @@
           class="scrolled-block project mb-4 grid w-full grid-cols-2 pt-10 sm:mb-6 md:mb-8 md:w-2/3"
         >
           <div class="flex flex-col gap-3 p-2">
-            <ImageList :img-list="project.imgList" />
+            <ImageList :img-list="project.imgList" :size="{ width: 344, height: 191 }" />
           </div>
           <div
             class="right-side sticky top-10 col-start-2 row-start-1 row-end-3 ml-3 flex h-fit flex-col p-2"

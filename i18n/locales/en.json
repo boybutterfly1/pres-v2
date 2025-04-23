@@ -45,5 +45,8 @@
     "stack": "stack",
     "description": "description",
     "whatIDid": "What I did"
+  },
+  "utils": {
+    "loading": "Loading..."
   }
 }

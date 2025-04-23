@@ -21,7 +21,7 @@
           >
             [ {{ $t('decoration.hi') }} ]
           </span>
-          <img src="/images/photo.png" alt="my photo" class="w-full rounded-sm object-cover" />
+          <ImageList :size="{ width: 102, height: 127 }" :img-list="['/images/my-photo.png']" />
         </div>
       </div>
     </div>

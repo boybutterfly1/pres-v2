@@ -45,5 +45,8 @@
     "stack": "Стек",
     "description": "Описание",
     "whatIDid": "Что я сделал"
+  },
+  "utils": {
+    "loading": "Загрузка..."
   }
 }

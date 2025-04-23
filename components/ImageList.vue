@@ -1,10 +1,10 @@
 <template>
-  <div v-for="(img, index) in imgList" :key="index" class="relative aspect-[344/191] w-full">
+  <div v-for="(img, index) in imgList" :key="index" class="relative w-full">
     <div
       v-if="!loaded[index]"
       class="absolute inset-0 z-10 flex items-center justify-center rounded-md border border-dotted border-c-dark bg-gray-100"
     >
-      <span class="text-gray-400">Загрузка...</span>
+      <span class="text-gray-400">{{ $t('utils.loading') }}.</span>
     </div>
 
     <LazyNuxtImg
@@ -16,8 +16,8 @@
       :placeholder="false"
       quality="80"
       loading="lazy"
-      :width="344"
-      :height="191"
+      :width="size.width"
+      :height="size.height"
       @load="handleLoad(index)"
     />
   </div>
@@ -28,6 +28,10 @@ import { ref } from 'vue';
 
 defineProps<{
   imgList: string[];
+  size: {
+    width: number;
+    height: number;
+  };
 }>();
 
 const loaded = ref<boolean[]>([]);
