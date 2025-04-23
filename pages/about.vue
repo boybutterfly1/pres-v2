@@ -35,9 +35,11 @@ import { onMounted, ref } from 'vue';
 
 const { t } = useI18n();
 const { setPending } = useRouterFallback();
+
 const aboutRef = ref<HTMLElement | null>(null);
 
 useHead({ title: `BTRFL1 ◦ ${t('navigation.about')}` });
+
 onMounted(() => {
   setPending(false);
   useScrollScale(aboutRef.value);
