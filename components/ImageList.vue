@@ -11,12 +11,13 @@
     <LazyNuxtImg
       :src="img"
       :alt="`${imgAlt(img)} image`"
-      class="aspect-[530/295] w-full cursor-zoom-in rounded-md object-cover duration-300 hover:scale-102"
+      class="w-full cursor-zoom-in rounded-md object-cover duration-300 hover:scale-102"
       sizes="100vw sm:50vw md:400px"
       format="webp"
       :placeholder="false"
       quality="50"
       loading="lazy"
+      :class="aspectRatio ? aspectRatio : 'aspect-[530/295]'"
       @load="handleLoad(index)"
       :style="!imgSrc ? `view-transition-name: ${imgAlt(img)}` : ''"
       @click="expandImage(img)"
@@ -34,6 +35,7 @@ const { stopScroll } = useOverflow();
 
 defineProps<{
   imgList: string[];
+  aspectRatio?: string;
 }>();
 
 const isLoaded = ref<boolean[]>([]);
