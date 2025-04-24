@@ -11,7 +11,7 @@
     <LazyNuxtImg
       :src="img"
       :alt="`${imgAlt(img)} image`"
-      class="w-full cursor-zoom-in rounded-md object-cover duration-300 hover:scale-102"
+      class="aspect-[530/295] w-full cursor-zoom-in rounded-md object-cover duration-300 hover:scale-102"
       sizes="100vw sm:50vw md:400px"
       format="webp"
       :placeholder="false"

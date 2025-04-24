@@ -7,6 +7,7 @@
       v-for="(item, index) in navItems"
       :key="item.name"
       :to="localePath({ name: item.to })"
+      :aria-label="$t(item.name)"
       @click="scrollToTop"
       :class="{ active: item.to === currentRoute }"
       class="flex w-full cursor-pointer items-center gap-5 px-1 py-[2px] hover:bg-neutral-800"

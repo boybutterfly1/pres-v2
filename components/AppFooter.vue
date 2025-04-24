@@ -15,7 +15,7 @@
         src="https://i.pinimg.com/736x/93/a6/b2/93a6b2674e6e959802e1e124b6b9eb93.jpg"
         width="200"
         alt="logo"
-        class="col-start-8 row-start-2 row-end-2 self-end"
+        class="col-start-8 row-start-2 row-end-2 aspect-square self-end"
       />
       <div class="col-start-1 col-end-6 row-start-2 row-end-2 self-end">
         <Contacts />

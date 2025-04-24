@@ -48,6 +48,7 @@
   },
   "utils": {
     "loading": "Loading...",
-    "close": "Close"
+    "close": "Close",
+    "switchLang": "Switch Language"
   }
 }

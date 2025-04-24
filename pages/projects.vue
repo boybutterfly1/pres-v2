@@ -19,7 +19,7 @@
           class="scrolled-block project mb-4 grid w-full grid-cols-2 pt-10 sm:mb-6 md:mb-8 md:w-2/3"
         >
           <div class="flex flex-col gap-3 p-2">
-            <ImageList :img-list="project.imgList" :size="{ width: 344, height: 191 }" />
+            <ImageList :img-list="project.imgList" />
           </div>
           <div
             class="right-side sticky top-10 col-start-2 row-start-1 row-end-3 ml-3 flex h-fit flex-col p-2"
@@ -77,6 +77,22 @@ const { setPending } = useRouterFallback();
 const projectsRef = ref<HTMLElement | null>(null);
 
 const projectsList = [
+  {
+    name: 'Presentation',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ligula condimentum,' +
+      ' sagittis odio vitae, dapibus nisi. Nulla et malesuada diam. Fusce vestibulum ipsum a.',
+    whatIDid: [
+      'Реализовал модульную архитектуру с использованием Composition API и TypeScript.',
+      'Настроил динамическую загрузку данных с DEX через Web3-интеграции.',
+      'Имплементировал кастомные графики с ECharts и удобные фильтры для портфеля.',
+      'Использовал Tailwind для адаптивной вёрстки и быстрой стилизации компонентов.',
+      'Настроил глобальное состояние через Pinia, включая сохранение предпочтений пользователя.',
+      'Обеспечил SSR и оптимизацию загрузки с помощью Vite + Nuxt.',
+    ],
+    stack: 'Nuxt 3, Tailwind, i18n, TypeScript, Three.js, Pixi.js',
+    imgList: ['/images/projects/pres1.png'],
+  },
   {
     name: 'DEXFOLIO',
     description:
