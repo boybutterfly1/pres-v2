@@ -22,14 +22,14 @@
       </div>
     </div>
 
-    <transition name="fade">
-      <component
-        :is="ThreeModel"
-        @loaded="isVisible = true"
-        v-if="isVisible"
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-      />
-    </transition>
+    <ClientOnly>
+      <transition name="fade">
+        <component
+          :is="ThreeModel"
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        />
+      </transition>
+    </ClientOnly>
   </footer>
 </template>
 
@@ -39,7 +39,6 @@ import { type Component, defineAsyncComponent, onMounted, ref, shallowRef } from
 
 const ThreeModel = shallowRef<Component | null>(null);
 
-const isVisible = ref<boolean>(true);
 const footerRef = ref<HTMLElement | null>(null);
 
 onMounted(() => {
@@ -51,7 +50,7 @@ onMounted(() => {
         stop();
       }
     },
-    { threshold: 0.2 },
+    { threshold: 0.5 },
   );
 });
 </script>
