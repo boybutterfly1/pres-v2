@@ -4,6 +4,7 @@
     class="z-50 flex w-90 flex-col items-start overflow-hidden rounded-lg border-[0.5px] border-c-white bg-c-dark px-2 text-c-white"
   >
     <NuxtLink
+      prefetch-on="interaction"
       v-for="(item, index) in navItems"
       :key="item.name"
       :to="localePath({ name: item.to })"

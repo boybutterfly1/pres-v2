@@ -50,6 +50,9 @@ export default defineNuxtConfig({
     ],
   },
   googleFonts: {
+    display: 'swap',
+    preconnect: true,
+    preload: true,
     families: {
       Unbounded: [300],
       'Victor Mono': [400, 700, 900],

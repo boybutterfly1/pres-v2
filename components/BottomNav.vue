@@ -10,6 +10,7 @@
     </section>
     <nav class="flex w-3/5 items-center justify-center gap-3 text-[0.65rem]">
       <NuxtLink
+        prefetch-on="interaction"
         v-for="item in navItems"
         :key="item.name"
         :to="localePath(item.to)"

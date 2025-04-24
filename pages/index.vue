@@ -19,9 +19,11 @@
 import { ref, onMounted, onUnmounted, defineAsyncComponent } from 'vue';
 import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
 import { useI18n, useHead } from '#imports';
+import { useRouter } from '#app';
 
 const LazyPixiApp = defineAsyncComponent(() => import('~/components/PixiApp/PixiApp.vue'));
 
+const router = useRouter();
 const { t } = useI18n();
 const { setPending } = useRouterFallback();
 const translateY = ref(0);
@@ -37,6 +39,7 @@ const handleScroll = () => {
 useHead({ title: `BTRFL1 ◦ ${t('navigation.intro')}` });
 
 onMounted(() => {
+  setTimeout(() => import('~/pages/stack.vue'), 3000);
   window.addEventListener('scroll', handleScroll);
 });
 
