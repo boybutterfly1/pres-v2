@@ -3,25 +3,24 @@
     class="about sticky top-8 flex h-[calc(100dvh-4.5rem)] w-full flex-col items-start justify-start rounded-xl bg-c-white p-4 sm:p-6 md:p-8"
     ref="aboutRef"
   >
-    <div class="start flex h-full w-full flex-col">
+    <div class="start relative flex h-full w-full flex-col">
       <h1
         class="mb-10 font-title text-2xl font-bold text-c-dark sm:mb-16 sm:text-3xl md:mb-20 md:text-[3rem]"
       >
         <ScrambledText :text="$t('pageTitle.about')" />
       </h1>
-      <span
-        class="z-20 inline-block w-full text-sm leading-relaxed text-c-dark uppercase sm:w-4/5 sm:text-base md:w-2/3 md:text-[1rem]"
-      >
-        {{ $t('aboutPage.text') }}
-      </span>
-      <div class="mt-6 flex h-full w-full items-center justify-center">
-        <div class="relative flex h-auto items-center rounded-sm sm:w-1/2 md:w-1/3 lg:w-1/4">
-          <span
-            class="absolute top-0 right-full mr-1 w-20 text-right font-black text-c-dark sm:w-24"
-          >
-            [ {{ $t('decoration.hi') }} ]
-          </span>
+
+      <div class="relative w-full xl:w-2/3">
+        <div class="float-right mb-4 ml-6 w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4">
           <ImageList :img-list="['/images/my-photo.png']" aspect-ratio="aspect-[1024/1270]" />
+        </div>
+
+        <div class="text-sm text-c-dark sm:text-base md:text-[1rem]">
+          <p class="mb-4 font-bold">{{ $t('aboutPage.text0') }}</p>
+          <p class="mb-4">{{ $t('aboutPage.text1') }}</p>
+          <p class="mb-4">{{ $t('aboutPage.text2') }}</p>
+          <p class="mb-4">{{ $t('aboutPage.text3') }}</p>
+          <p class="mb-4">{{ $t('aboutPage.text4') }}</p>
         </div>
       </div>
     </div>

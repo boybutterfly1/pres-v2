@@ -12,7 +12,6 @@
 <script setup lang="ts">
 import { useHead, useI18n } from '#imports';
 import { watch } from 'vue';
-import AppFooter from '~/components/AppFooter.vue';
 
 const { locale } = useI18n();
 

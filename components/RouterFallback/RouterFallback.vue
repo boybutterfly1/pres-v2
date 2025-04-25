@@ -1,10 +1,11 @@
 <template>
   <transition name="fade">
     <div
-      v-if="isPending"
-      class="fixed top-0 left-0 z-[999] h-screen w-screen overflow-hidden bg-c-white"
+      v-show="isPending"
+      class="fixed top-0 left-0 z-[999] flex h-screen w-screen items-center justify-center overflow-hidden bg-c-white"
     >
       <span class="loader"></span>
+      <!--      <div class="font-title text-[5vw] text-c-dark">{{ progress }}%</div>-->
       <div class="absolute top-0 left-0 flex h-full w-8 flex-col items-center justify-between py-3">
         <div v-for="(el, index) of 3" :key="index" class="h-6 w-1 rounded-lg bg-c-dark" />
       </div>
@@ -21,8 +22,10 @@
 import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
 import { useRouter } from '#app';
 import { useOverflow } from '~/composables/useOverflow';
+import { useInitChunksProgress } from '~/components/RouterFallback/useInitChunksProgress';
 
 const router = useRouter();
+const { isDone, progress } = useInitChunksProgress();
 const { isPending, setPending } = useRouterFallback();
 const { stopScroll } = useOverflow();
 

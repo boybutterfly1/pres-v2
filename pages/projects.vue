@@ -241,7 +241,6 @@ onMounted(() => {
 <style scoped>
 .project {
   opacity: 0;
-  filter: blur(10px);
   will-change: opacity, filter;
   transition:
     opacity 0.5s,
@@ -249,7 +248,6 @@ onMounted(() => {
 }
 .project--visible {
   opacity: 1;
-  filter: blur(0);
 }
 .start {
   animation: zoomOut 0.6s ease-out forwards;

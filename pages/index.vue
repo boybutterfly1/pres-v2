@@ -11,19 +11,16 @@
       <TypeWriter :string-arr="[$t('intro.line1'), $t('intro.line2')]" />
     </span>
 
-    <LazyPixiApp @loaded="setPending(false)" class="absolute top-0 left-0 z-10 h-full w-full" />
+    <PixiApp @loaded="setPending(false)" class="absolute top-0 left-0 z-10 h-full w-full" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, defineAsyncComponent } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { useRouterFallback } from '~/components/RouterFallback/useRouterFallback';
 import { useI18n, useHead } from '#imports';
-import { useRouter } from '#app';
+import PixiApp from '~/components/PixiApp/PixiApp.vue';
 
-const LazyPixiApp = defineAsyncComponent(() => import('~/components/PixiApp/PixiApp.vue'));
-
-const router = useRouter();
 const { t } = useI18n();
 const { setPending } = useRouterFallback();
 const translateY = ref(0);
@@ -39,7 +36,6 @@ const handleScroll = () => {
 useHead({ title: `BTRFL1 ◦ ${t('navigation.intro')}` });
 
 onMounted(() => {
-  setTimeout(() => import('~/pages/stack.vue'), 3000);
   window.addEventListener('scroll', handleScroll);
 });
 

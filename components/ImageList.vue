@@ -58,9 +58,7 @@ const expandImage = (img: string) => {
 };
 
 const handleLoad = (index: number) => {
-  setTimeout(() => {
-    isLoaded.value[index] = true;
-  }, 1000);
+  isLoaded.value[index] = true;
 };
 </script>
 

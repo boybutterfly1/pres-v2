@@ -37,7 +37,11 @@
     "rights": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget vehicula enim, sit amet tincidunt lorem. Phasellus auctor elit vel mauris tincidunt luctus. Etiam enim nibh, lobortis a elementum quis, tincidunt et metus. Vestibulum ac.\n\n"
   },
   "aboutPage": {
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut\n        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco\n        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in\n        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "text0": "Hello, my name is Kamil.",
+    "text1": "My passion for web development began with writing simple scripts to automate routine tasks and over time evolved into a drive to create things that bring real value.",
+    "text2": "I strive to write clean and scalable code that is easy to maintain and expand. Functionality is important to me, but so is the quality of the experience that both the user and the developer using my code get. I enjoy being in a constant process of learning, as well as sharing knowledge with others.",
+    "text3": "Outside of work, I enjoy walking, listening to podcasts on history, astronomy, and paleontology. I love animals and building LEGO.",
+    "text4": "I am currently looking for a cohesive team of like-minded individuals to work on projects together and raise the level of the company."
   },
   "projectsPage": {
     "title": "Title",
