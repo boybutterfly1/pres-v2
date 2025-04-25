@@ -95,7 +95,7 @@ const projectsRef = ref<HTMLElement | null>(null);
 const projectsList = [
   {
     name: 'Presentation',
-    link: 'https://pres-v2.vercel.app/',
+    link: 'https://boybutterfly1.vercel.app',
     github: 'https://github.com/boybutterfly1/pres-v2',
     description: 'projectsPage.presentation.description',
     whatIDid: [
