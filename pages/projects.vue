@@ -64,7 +64,7 @@
           </div>
           <div class="col-start-1 flex flex-col p-2">
             <span>{{ $t('projectsPage.whatIDid') }}</span>
-            <ul>
+            <ul class="flex flex-col gap-1">
               <li
                 v-for="(string, index) in project.whatIDid"
                 :key="index"
@@ -115,7 +115,6 @@ const projectsList = [
     github: 'https://github.com/boybutterfly1/dexfolio2.0',
     description: 'projectsPage.dexfolio.description',
     whatIDid: [
-      'projectsPage.dexfolio.whatIDid.line1',
       'projectsPage.dexfolio.whatIDid.line2',
       'projectsPage.dexfolio.whatIDid.line3',
       'projectsPage.dexfolio.whatIDid.line4',
@@ -143,7 +142,6 @@ const projectsList = [
     whatIDid: [
       'projectsPage.soljuh.whatIDid.line1',
       'projectsPage.soljuh.whatIDid.line2',
-      'projectsPage.soljuh.whatIDid.line3',
       'projectsPage.soljuh.whatIDid.line4',
       'projectsPage.soljuh.whatIDid.line5',
       'projectsPage.soljuh.whatIDid.line6',
@@ -156,11 +154,7 @@ const projectsList = [
     link: 'https://kanban-theta-opal.vercel.app/',
     github: null,
     description: 'projectsPage.kanban.description',
-    whatIDid: [
-      'projectsPage.kanban.whatIDid.line1',
-      'projectsPage.kanban.whatIDid.line2',
-      'projectsPage.kanban.whatIDid.line3',
-    ],
+    whatIDid: ['projectsPage.kanban.whatIDid.line1', 'projectsPage.kanban.whatIDid.line2'],
     stack: 'Vue 3, Pinia, JavaScript, TypeScript',
     imgList: ['/images/projects/kanban.png'],
   },
@@ -171,7 +165,6 @@ const projectsList = [
     description: 'projectsPage.jonesy.description',
     whatIDid: [
       'projectsPage.jonesy.whatIDid.line1',
-      'projectsPage.jonesy.whatIDid.line2',
       'projectsPage.jonesy.whatIDid.line3',
       'projectsPage.jonesy.whatIDid.line4',
     ],
@@ -183,7 +176,7 @@ const projectsList = [
     link: 'https://tls-vue3.vercel.app/',
     github: null,
     description: 'projectsPage.tls.description',
-    whatIDid: ['projectsPage.tls.whatIDid.line1', 'projectsPage.tls.whatIDid.line2'],
+    whatIDid: ['projectsPage.tls.whatIDid.line1'],
     stack: 'Nuxt 3, TypeScript',
     imgList: ['/images/projects/tls1.png'],
   },

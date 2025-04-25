@@ -63,7 +63,6 @@
     "dexfolio": {
       "description": "A crypto portfolio and wallet tracker. Allows users to create token lists and get up-to-date information on wallet balances. Authorized users can access real-time data from any device.",
       "whatIDid": {
-        "line1": "Used TypeScript to ensure type safety, improving code support and reducing runtime errors",
         "line2": "Used Vue 3 to create dynamic and reactive components with Composition API and Vue Router",
         "line3": "Applied FSD (Feature-Sliced Design) architecture to break the project into independent and reusable slices, simplifying scalability and maintenance",
         "line4": "Implemented server-side rendering (SSR) with Nuxt 3 for fast and SEO-optimized page rendering",
@@ -85,7 +84,6 @@
       "whatIDid": {
         "line1": "Used Vue 3 to create a dynamic and reactive interface with Composition API and Vue Router",
         "line2": "Applied Pinia for state management, providing a centralized and scalable data store for the entire application",
-        "line3": "Used TypeScript to ensure type safety, improving code support and reducing runtime errors",
         "line4": "Used Axios to perform asynchronous HTTP requests to fetch data about tokens and their statuses",
         "line5": "Integrated WebSocket for real-time two-way communication, fetching up-to-date data for display",
         "line6": "Used Canvas to create visual elements for the map, such as bubbles, based on token data"
@@ -95,15 +93,13 @@
       "description": "A Kanban board for task management with the ability to move items, filter, and add new tasks",
       "whatIDid": {
         "line1": "Used Vue 3 to create a dynamic and reactive interface with Composition API and Vue Router",
-        "line2": "Applied Pinia for state management, providing a centralized data store for tasks and their statuses",
-        "line3": "Used TypeScript to ensure type safety, improving code support and reducing runtime errors"
+        "line2": "Applied Pinia for state management, providing a centralized data store for tasks and their statuses"
       }
     },
     "jonesy": {
       "description": "Interactive meme coin website with realtime token data and 3D model",
       "whatIDid": {
         "line1": "Used Vue 3 to create a dynamic and reactive interface with Composition API",
-        "line2": "Used TypeScript to ensure type safety and improve code support",
         "line3": "Applied Axios for asynchronous HTTP requests to fetch realtime token data",
         "line4": "Used THREE.js to create a 3D model and visualize it on the webpage"
       }
@@ -112,8 +108,7 @@
     "tls": {
       "description": "Interactive NFT project website",
       "whatIDid": {
-        "line1": "Used Nuxt 3 to create a server-side rendered application with enhanced performance and SEO optimization",
-        "line2": "Used TypeScript to ensure type safety and improve the quality of development"
+        "line1": "Used Nuxt 3 to create a server-side rendered application with enhanced performance and SEO optimization"
       }
     },
 
