@@ -26,7 +26,23 @@
           >
             <div class="mb-8 flex flex-col items-start gap-1.5">
               <span class="mt-1">{{ $t('projectsPage.title') }}</span>
-              <h2 class="font-title text-xl font-bold">[ {{ project.name }} ]</h2>
+              <div class="flex items-center gap-2">
+                <h2 class="font-title text-xl font-bold">[ {{ project.name }} ]</h2>
+                <a :href="project.link" target="_blank">
+                  <Icon
+                    name="iconamoon:link-external"
+                    size="1.2rem"
+                    class="cursor-pointer duration-300 hover:scale-130"
+                  />
+                </a>
+                <a v-if="project.github" :href="project.github" target="_blank">
+                  <Icon
+                    name="mdi:github-box"
+                    size="1.3rem"
+                    class="cursor-pointer duration-300 hover:scale-130"
+                  />
+                </a>
+              </div>
             </div>
             <div class="flex flex-col items-start gap-1.5">
               <span class="mt-0.5">{{ $t('projectsPage.technology') }}</span>
@@ -44,7 +60,7 @@
           </div>
           <div class="col-start-1 flex flex-col p-2">
             <span>{{ $t('projectsPage.description') }}</span>
-            <p class="text-xs">{{ project.description }}</p>
+            <p class="text-xs">{{ $t(project.description) }}</p>
           </div>
           <div class="col-start-1 flex flex-col p-2">
             <span>{{ $t('projectsPage.whatIDid') }}</span>
@@ -54,7 +70,7 @@
                 :key="index"
                 class="ml-3.5 list-disc text-xs"
               >
-                {{ string }}
+                {{ $t(string) }}
               </li>
             </ul>
           </div>
@@ -79,129 +95,112 @@ const projectsRef = ref<HTMLElement | null>(null);
 const projectsList = [
   {
     name: 'Presentation',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ligula condimentum,' +
-      ' sagittis odio vitae, dapibus nisi. Nulla et malesuada diam. Fusce vestibulum ipsum a.',
+    link: 'https://pres-v2.vercel.app/',
+    github: 'https://github.com/boybutterfly1/pres-v2',
+    description: 'projectsPage.presentation.description',
     whatIDid: [
-      'Реализовал модульную архитектуру с использованием Composition API и TypeScript.',
-      'Настроил динамическую загрузку данных с DEX через Web3-интеграции.',
-      'Имплементировал кастомные графики с ECharts и удобные фильтры для портфеля.',
-      'Использовал Tailwind для адаптивной вёрстки и быстрой стилизации компонентов.',
-      'Настроил глобальное состояние через Pinia, включая сохранение предпочтений пользователя.',
-      'Обеспечил SSR и оптимизацию загрузки с помощью Vite + Nuxt.',
+      'projectsPage.presentation.whatIDid.line1',
+      'projectsPage.presentation.whatIDid.line2',
+      'projectsPage.presentation.whatIDid.line3',
+      'projectsPage.presentation.whatIDid.line4',
+      'projectsPage.presentation.whatIDid.line5',
+      'projectsPage.presentation.whatIDid.line6',
     ],
     stack: 'Nuxt 3, Tailwind, i18n, TypeScript, Three.js, Pixi.js',
     imgList: ['/images/projects/pres1.png'],
   },
   {
     name: 'DEXFOLIO',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ligula condimentum,' +
-      ' sagittis odio vitae, dapibus nisi. Nulla et malesuada diam. Fusce vestibulum ipsum a.',
+    link: 'https://host-eta-ten.vercel.app/wallet-tracker',
+    github: 'https://github.com/boybutterfly1/dexfolio2.0',
+    description: 'projectsPage.dexfolio.description',
     whatIDid: [
-      'Реализовал модульную архитектуру с использованием Composition API и TypeScript.',
-      'Настроил динамическую загрузку данных с DEX через Web3-интеграции.',
-      'Имплементировал кастомные графики с ECharts и удобные фильтры для портфеля.',
-      'Использовал Tailwind для адаптивной вёрстки и быстрой стилизации компонентов.',
-      'Настроил глобальное состояние через Pinia, включая сохранение предпочтений пользователя.',
-      'Обеспечил SSR и оптимизацию загрузки с помощью Vite + Nuxt.',
+      'projectsPage.dexfolio.whatIDid.line1',
+      'projectsPage.dexfolio.whatIDid.line2',
+      'projectsPage.dexfolio.whatIDid.line3',
+      'projectsPage.dexfolio.whatIDid.line4',
+      'projectsPage.dexfolio.whatIDid.line5',
+      'projectsPage.dexfolio.whatIDid.line6',
+      'projectsPage.dexfolio.whatIDid.line7',
+      'projectsPage.dexfolio.whatIDid.line8',
+      'projectsPage.dexfolio.whatIDid.line9',
+      'projectsPage.dexfolio.whatIDid.line10',
+      'projectsPage.dexfolio.whatIDid.line11',
+      'projectsPage.dexfolio.whatIDid.line12',
+      'projectsPage.dexfolio.whatIDid.line13',
+      'projectsPage.dexfolio.whatIDid.line14',
+      'projectsPage.dexfolio.whatIDid.line15',
     ],
     stack:
-      'Vue 3, Nuxt 3, Webpack, Module Federation, Vite, Pinia, i18n, JavaScript, TypeScript, Firebase(Auth & Database), Axios, Echarts',
+      'Vue 3, Nuxt 3, FSD, Webpack, Module Federation, Vite, Pinia, i18n, JavaScript, TypeScript, Firebase(Auth & Database), Axios, Echarts',
     imgList: ['/images/projects/dexfolio1.png', '/images/projects/dexfolio2.png'],
   },
   {
     name: 'Soljuh Map',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ligula condimentum',
+    link: 'https://soljuh-recon.vercel.app/',
+    github: null,
+    description: 'projectsPage.soljuh.description',
     whatIDid: [
-      'Реализовал модульную архитектуру с использованием Composition API и TypeScript.',
-      'Настроил динамическую загрузку данных с DEX через Web3-интеграции.',
-      'Имплементировал кастомные графики с ECharts и удобные фильтры для портфеля.',
-      'Использовал Tailwind для адаптивной вёрстки и быстрой стилизации компонентов.',
-      'Настроил глобальное состояние через Pinia, включая сохранение предпочтений пользователя.',
-      'Обеспечил SSR и оптимизацию загрузки с помощью Vite + Nuxt.',
+      'projectsPage.soljuh.whatIDid.line1',
+      'projectsPage.soljuh.whatIDid.line2',
+      'projectsPage.soljuh.whatIDid.line3',
+      'projectsPage.soljuh.whatIDid.line4',
+      'projectsPage.soljuh.whatIDid.line5',
+      'projectsPage.soljuh.whatIDid.line6',
     ],
     stack: 'Vue 3, Pinia, TypeScript, Axios, Websocket, Canvas',
     imgList: ['/images/projects/soljuh1.png'],
   },
   {
     name: 'kanban',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ligula condimentum',
+    link: 'https://kanban-theta-opal.vercel.app/',
+    github: null,
+    description: 'projectsPage.kanban.description',
     whatIDid: [
-      'Реализовал модульную архитектуру с использованием Composition API и TypeScript.',
-      'Настроил динамическую загрузку данных с DEX через Web3-интеграции.',
-      'Имплементировал кастомные графики с ECharts и удобные фильтры для портфеля.',
-      'Использовал Tailwind для адаптивной вёрстки и быстрой стилизации компонентов.',
-      'Настроил глобальное состояние через Pinia, включая сохранение предпочтений пользователя.',
-      'Обеспечил SSR и оптимизацию загрузки с помощью Vite + Nuxt.',
+      'projectsPage.kanban.whatIDid.line1',
+      'projectsPage.kanban.whatIDid.line2',
+      'projectsPage.kanban.whatIDid.line3',
     ],
     stack: 'Vue 3, Pinia, JavaScript, TypeScript',
     imgList: ['/images/projects/kanban.png'],
   },
   {
     name: 'jonesy',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ligula condimentum,' +
-      ' sagittis odio vitae, dapibus nisi. Nulla et malesuada diam. Fusce vestibulum ipsum a.',
+    link: 'https://www.jonesy.meme/',
+    github: null,
+    description: 'projectsPage.jonesy.description',
     whatIDid: [
-      'Реализовал модульную архитектуру с использованием Composition API и TypeScript.',
-      'Настроил динамическую загрузку данных с DEX через Web3-интеграции.',
-      'Имплементировал кастомные графики с ECharts и удобные фильтры для портфеля.',
-      'Использовал Tailwind для адаптивной вёрстки и быстрой стилизации компонентов.',
-      'Настроил глобальное состояние через Pinia, включая сохранение предпочтений пользователя.',
-      'Обеспечил SSR и оптимизацию загрузки с помощью Vite + Nuxt.',
+      'projectsPage.jonesy.whatIDid.line1',
+      'projectsPage.jonesy.whatIDid.line2',
+      'projectsPage.jonesy.whatIDid.line3',
+      'projectsPage.jonesy.whatIDid.line4',
     ],
     stack: 'Vue 3, JavaScript, TypeScript, Axios, THREE.js',
     imgList: ['/images/projects/jonesy1.png', '/images/projects/jonesy2.png'],
   },
   {
     name: 'The Local Star',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ligula condimentum, sagittis odio vitae, dapibus nisi. ',
-    whatIDid: [
-      'Реализовал модульную архитектуру с использованием Composition API и TypeScript.',
-      'Настроил динамическую загрузку данных с DEX через Web3-интеграции.',
-      'Имплементировал кастомные графики с ECharts и удобные фильтры для портфеля.',
-      'Использовал Tailwind для адаптивной вёрстки и быстрой стилизации компонентов.',
-      'Настроил глобальное состояние через Pinia, включая сохранение предпочтений пользователя.',
-      'Обеспечил SSR и оптимизацию загрузки с помощью Vite + Nuxt.',
-    ],
+    link: 'https://tls-vue3.vercel.app/',
+    github: null,
+    description: 'projectsPage.tls.description',
+    whatIDid: ['projectsPage.tls.whatIDid.line1', 'projectsPage.tls.whatIDid.line2'],
     stack: 'Nuxt 3, TypeScript',
     imgList: ['/images/projects/tls1.png'],
   },
-  {
-    name: 'arabcat',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ligula condimentum',
-    whatIDid: [
-      'Реализовал модульную архитектуру с использованием Composition API и TypeScript.',
-      'Настроил динамическую загрузку данных с DEX через Web3-интеграции.',
-      'Имплементировал кастомные графики с ECharts и удобные фильтры для портфеля.',
-      'Использовал Tailwind для адаптивной вёрстки и быстрой стилизации компонентов.',
-      'Настроил глобальное состояние через Pinia, включая сохранение предпочтений пользователя.',
-      'Обеспечил SSR и оптимизацию загрузки с помощью Vite + Nuxt.',
-    ],
-    stack: 'Vue 3, i18n, TypeScript, Axios',
-    imgList: ['/images/projects/arabcat1.png', '/images/projects/arabcat2.png'],
-  },
-  {
-    name: 'Jungle',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non ligula condimentum,' +
-      ' sagittis odio vitae, dapibus nisi. Nulla et malesuada diam. Fusce vestibulum ipsum a.',
-    whatIDid: [
-      'Реализовал модульную архитектуру с использованием Composition API и TypeScript.',
-      'Настроил динамическую загрузку данных с DEX через Web3-интеграции.',
-      'Имплементировал кастомные графики с ECharts и удобные фильтры для портфеля.',
-      'Использовал Tailwind для адаптивной вёрстки и быстрой стилизации компонентов.',
-      'Настроил глобальное состояние через Pinia, включая сохранение предпочтений пользователя.',
-      'Обеспечил SSR и оптимизацию загрузки с помощью Vite + Nuxt.',
-    ],
-    stack: 'Vue 3, JavaScript, TypeScript, Axios, MongoDB',
-    imgList: ['/images/projects/jungle1.png', '/images/projects/jungle2.png'],
-  },
+  // {
+  //   name: 'arabcat',
+  //   description: '',
+  //   whatIDid: [],
+  //   stack: 'Vue 3, i18n, TypeScript, Axios',
+  //   imgList: ['/images/projects/arabcat1.png', '/images/projects/arabcat2.png'],
+  // },
+  // {
+  //   name: 'Jungle',
+  //   description: '',
+  //   whatIDid: [],
+  //   stack: 'Vue 3, JavaScript, TypeScript, Axios, MongoDB',
+  //   imgList: ['/images/projects/jungle1.png', '/images/projects/jungle2.png'],
+  // },
 ];
 
 function initObserver(): void {
@@ -210,7 +209,7 @@ function initObserver(): void {
   const options: IntersectionObserverInit = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.7,
+    threshold: 0.3,
   };
 
   const callback: IntersectionObserverCallback = (entries, observer) => {

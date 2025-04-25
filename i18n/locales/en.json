@@ -48,7 +48,87 @@
     "technology": "technology",
     "stack": "stack",
     "description": "description",
-    "whatIDid": "What I did"
+    "whatIDid": "What I did",
+    "presentation": {
+      "description": "My personal portfolio website",
+      "whatIDid": {
+        "line1": "Used Tailwind for creating responsive layouts and quickly styling components",
+        "line2": "Ensured a comfortable UI/UX by adding animations with GSAP, CSS, and View Transition API",
+        "line3": "Set up global states using Shared Composables",
+        "line4": "Implemented multilingual support with the i18n library",
+        "line5": "Optimized image loading with NuxtImg",
+        "line6": "Ensured SSR and optimized loading with Vite and Nuxt"
+      }
+    },
+    "dexfolio": {
+      "description": "A crypto portfolio and wallet tracker. Allows users to create token lists and get up-to-date information on wallet balances. Authorized users can access real-time data from any device.",
+      "whatIDid": {
+        "line1": "Used TypeScript to ensure type safety, improving code support and reducing runtime errors",
+        "line2": "Used Vue 3 to create dynamic and reactive components with Composition API and Vue Router",
+        "line3": "Applied FSD (Feature-Sliced Design) architecture to break the project into independent and reusable slices, simplifying scalability and maintenance",
+        "line4": "Implemented server-side rendering (SSR) with Nuxt 3 for fast and SEO-optimized page rendering",
+        "line5": "Used Pinia for state management, providing a scalable and reactive solution for handling global states",
+        "line6": "Implemented multilingual support using the i18n library for dynamic content translation based on user preferences",
+        "line7": "Configured Webpack for asset bundling and optimization using custom loaders and plugins to improve performance",
+        "line8": "Used Module Federation for a microfrontend architecture, enabling dynamic module loading between multiple applications",
+        "line9": "Extracted reusable parts of the application into separate packages and organized them into workspaces for improved scalability and simplified development",
+        "line10": "Used Axios to perform asynchronous HTTP requests to APIs and efficiently manage responses",
+        "line11": "Integrated Firebase for authentication and real-time database operations, providing a scalable backend solution",
+        "line12": "Integrated ECharts for creating interactive and customizable data visualizations in the application",
+        "line13": "Used LocalStorage to store data on the client-side, ensuring its availability across user sessions",
+        "line14": "Implemented IndexedDB to store large amounts of data in the browser, allowing efficient offline data handling",
+        "line15": "Implemented role-based access control (RBAC) to dynamically adjust the UI based on user roles, providing a personalized experience for different types of users"
+      }
+    },
+    "soljuh": {
+      "description": "A bubble map for visualizing crypto-token lists, filtering by multiple parameters, and retrieving data for individual tokens",
+      "whatIDid": {
+        "line1": "Used Vue 3 to create a dynamic and reactive interface with Composition API and Vue Router",
+        "line2": "Applied Pinia for state management, providing a centralized and scalable data store for the entire application",
+        "line3": "Used TypeScript to ensure type safety, improving code support and reducing runtime errors",
+        "line4": "Used Axios to perform asynchronous HTTP requests to fetch data about tokens and their statuses",
+        "line5": "Integrated WebSocket for real-time two-way communication, fetching up-to-date data for display",
+        "line6": "Used Canvas to create visual elements for the map, such as bubbles, based on token data"
+      }
+    },
+    "kanban": {
+      "description": "A Kanban board for task management with the ability to move items, filter, and add new tasks",
+      "whatIDid": {
+        "line1": "Used Vue 3 to create a dynamic and reactive interface with Composition API and Vue Router",
+        "line2": "Applied Pinia for state management, providing a centralized data store for tasks and their statuses",
+        "line3": "Used TypeScript to ensure type safety, improving code support and reducing runtime errors"
+      }
+    },
+    "jonesy": {
+      "description": "Interactive meme coin website with realtime token data and 3D model",
+      "whatIDid": {
+        "line1": "Used Vue 3 to create a dynamic and reactive interface with Composition API",
+        "line2": "Used TypeScript to ensure type safety and improve code support",
+        "line3": "Applied Axios for asynchronous HTTP requests to fetch realtime token data",
+        "line4": "Used THREE.js to create a 3D model and visualize it on the webpage"
+      }
+    },
+
+    "tls": {
+      "description": "Interactive NFT project website",
+      "whatIDid": {
+        "line1": "Used Nuxt 3 to create a server-side rendered application with enhanced performance and SEO optimization",
+        "line2": "Used TypeScript to ensure type safety and improve the quality of development"
+      }
+    },
+
+    "arabcat": {
+      "description": "",
+      "whatIDid": {
+        "line1": ""
+      }
+    },
+    "jungle": {
+      "description": "",
+      "whatIDid": {
+        "line1": ""
+      }
+    }
   },
   "utils": {
     "loading": "Loading...",
