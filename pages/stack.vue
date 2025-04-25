@@ -55,26 +55,20 @@ const stackList = [
   { name: 'SCSS', icon: 'vscode-icons:file-type-scss' },
   { name: 'JavaScript', icon: 'skill-icons:javascript' },
   { name: 'TypeScript', icon: 'skill-icons:typescript' },
-
   { name: 'Vue.js', icon: 'material-icon-theme:vue' },
   { name: 'Pinia', icon: 'logos:pinia' },
   { name: 'Nuxt 3', icon: 'vscode-icons:file-type-nuxt' },
-  { name: 'Three.js', icon: 'tabler:brand-threejs' },
-  { name: 'ECharts', icon: 'simple-icons:apacheecharts' },
-
   { name: 'Tailwind', icon: 'vscode-icons:file-type-tailwind' },
-
-  { name: 'Webpack', icon: 'devicon:webpack' },
-  { name: 'Vite', icon: 'vscode-icons:file-type-vite' },
   { name: 'Axios', icon: 'devicon-plain:axios' },
   { name: 'i18n', icon: 'material-icon-theme:i18n' },
-  { name: 'Eslint', icon: 'devicon:eslint' },
-
   { name: 'FSD', icon: 'material-symbols:folder-open-rounded' },
-
+  { name: 'Webpack', icon: 'devicon:webpack' },
+  { name: 'Vite', icon: 'vscode-icons:file-type-vite' },
   { name: 'Firebase', icon: 'vscode-icons:file-type-firebase' },
+  { name: 'Eslint', icon: 'devicon:eslint' },
+  { name: 'Three.js', icon: 'tabler:brand-threejs' },
+  { name: 'ECharts', icon: 'simple-icons:apacheecharts' },
   { name: 'Vercel', icon: 'skill-icons:vercel-light' },
-
   { name: 'GitHub', icon: 'skill-icons:github-dark' },
 ];
 

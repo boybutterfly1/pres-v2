@@ -62,19 +62,6 @@ const contactLinks = [
     href: 'mailto:',
     iconName: 'material-symbols:mail',
   },
-  { title: 'contacts.twitter', description: '', href: ':', iconName: 'hugeicons:new-twitter' },
-  {
-    title: 'contacts.instagram',
-    description: '@boybutterfly1',
-    href: ':',
-    iconName: 'mdi:instagram',
-  },
-  {
-    title: 'contacts.discord',
-    description: 'boybutterfly1',
-    href: ':',
-    iconName: 'ic:baseline-discord',
-  },
 ];
 
 const lightCircle = ref<HTMLDivElement | null>(null);
