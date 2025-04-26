@@ -14,12 +14,18 @@
           <ScrambledText :text="$t('pageTitle.projects')" />
         </h1>
         <div
+          :id="project.name.toLowerCase().replace(/ /g, '-')"
           v-for="project in projectsList"
           :key="project.name"
           class="scrolled-block project mb-4 grid w-full grid-cols-2 pt-10 sm:mb-6 md:mb-8 md:w-2/3"
         >
           <div class="flex flex-col gap-3 p-2">
             <ImageList :img-list="project.imgList" />
+            <ClientOnly>
+              <video v-if="project.video" muted controls class="rounded-md">
+                <source :src="project.video" />
+              </video>
+            </ClientOnly>
           </div>
           <div
             class="right-side sticky top-10 col-start-2 row-start-1 row-end-3 ml-3 flex h-fit flex-col p-2"
@@ -146,6 +152,7 @@ const projectsList = [
     ],
     stack: 'Vue 3, Pinia, TypeScript, Axios, Websocket, Canvas',
     imgList: ['/images/projects/soljuh1.png'],
+    video: '/video/soljuh.mp4',
   },
   {
     name: 'kanban',
@@ -206,9 +213,19 @@ function initObserver(): void {
   const callback: IntersectionObserverCallback = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        const image = entry.target as HTMLImageElement;
-        image.classList.add('project--visible');
-        observer.unobserve(image);
+        const element = entry.target as HTMLElement;
+        element.classList.add('project--visible');
+
+        const video = element.querySelector<HTMLVideoElement>('video');
+        if (video) {
+          if (video.readyState >= 2 && video.paused) {
+            void video.play().catch((e) => {
+              console.warn('Video can not be played automatically', e);
+            });
+          }
+        }
+
+        observer.unobserve(element);
       }
     });
   };
