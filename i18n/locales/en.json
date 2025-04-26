@@ -63,20 +63,18 @@
     "dexfolio": {
       "description": "A crypto portfolio and wallet tracker. Allows users to create token lists and get up-to-date information on wallet balances. Authorized users can access real-time data from any device.",
       "whatIDid": {
-        "line2": "Used Vue 3 to create dynamic and reactive components with Composition API and Vue Router",
-        "line3": "Applied FSD (Feature-Sliced Design) architecture to break the project into independent and reusable slices, simplifying scalability and maintenance",
-        "line4": "Implemented server-side rendering (SSR) with Nuxt 3 for fast and SEO-optimized page rendering",
-        "line5": "Used Pinia for state management, providing a scalable and reactive solution for handling global states",
-        "line6": "Implemented multilingual support using the i18n library for dynamic content translation based on user preferences",
-        "line7": "Configured Webpack for asset bundling and optimization using custom loaders and plugins to improve performance",
-        "line8": "Used Module Federation for a microfrontend architecture, enabling dynamic module loading between multiple applications",
-        "line9": "Extracted reusable parts of the application into separate packages and organized them into workspaces for improved scalability and simplified development",
-        "line10": "Used Axios to perform asynchronous HTTP requests to APIs and efficiently manage responses",
-        "line11": "Integrated Firebase for authentication and real-time database operations, providing a scalable backend solution",
-        "line12": "Integrated ECharts for creating interactive and customizable data visualizations in the application",
-        "line13": "Used LocalStorage to store data on the client-side, ensuring its availability across user sessions",
-        "line14": "Implemented IndexedDB to store large amounts of data in the browser, allowing efficient offline data handling",
-        "line15": "Implemented role-based access control (RBAC) to dynamically adjust the UI based on user roles, providing a personalized experience for different types of users"
+        "line1": "Applied the FSD (Feature-Sliced Design) architecture to separate the project into independent, reusable slices, simplifying scalability and maintainability",
+        "line2": "Implemented SSR using Nuxt 3 for SEO-optimized rendering of specific pages",
+        "line3": "Implemented multilingual support using the i18n library with dynamic loading of required translations",
+        "line4": "Independently configured a custom Webpack setup from scratch",
+        "line5": "Used the Module Federation plugin to integrate applications built with Vite and Webpack, enabling dynamic module loading across multiple apps",
+        "line6": "Extracted reusable parts of the application into standalone packages and organized them into workspaces to improve scalability and streamline development",
+        "line7": "Used Axios for asynchronous HTTP requests with centralized handling via interceptors",
+        "line8": "Integrated Firebase for authentication and real-time data handling",
+        "line9": "Integrated ECharts to create interactive and customizable data visualizations",
+        "line10": "Used LocalStorage to persist data on the client side and maintain availability across user sessions",
+        "line11": "Implemented IndexedDB for storing large amounts of data directly in the browser",
+        "line12": "Implemented role-based access control using router middleware to dynamically update the UI based on user roles"
       }
     },
     "soljuh": {

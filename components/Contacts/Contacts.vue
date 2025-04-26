@@ -53,13 +53,13 @@ const contactLinks = [
   {
     title: 'contacts.telegram',
     description: '@boybutterfly1',
-    href: ':',
+    href: 'https://t.me/boybutterfly1',
     iconName: 'ri:telegram-2-fill',
   },
   {
     title: 'contacts.email',
     description: 'boybutterfly1@gmail.com',
-    href: 'mailto:',
+    href: 'mailto:boybutterfly1@gmail.com',
     iconName: 'material-symbols:mail',
   },
 ];

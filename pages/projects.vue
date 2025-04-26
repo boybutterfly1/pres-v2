@@ -59,12 +59,12 @@
             </div>
           </div>
           <div class="col-start-1 flex flex-col p-2">
-            <span>{{ $t('projectsPage.description') }}</span>
-            <p class="text-xs">{{ $t(project.description) }}</p>
+            <span class="font-bold">{{ $t('projectsPage.description') }}</span>
+            <p class="text-xs normal-case">{{ $t(project.description) }}</p>
           </div>
           <div class="col-start-1 flex flex-col p-2">
-            <span>{{ $t('projectsPage.whatIDid') }}</span>
-            <ul class="flex flex-col gap-1">
+            <span class="font-bold">{{ $t('projectsPage.whatIDid') }}</span>
+            <ul class="up flex flex-col gap-1 normal-case">
               <li
                 v-for="(string, index) in project.whatIDid"
                 :key="index"
@@ -115,6 +115,7 @@ const projectsList = [
     github: 'https://github.com/boybutterfly1/dexfolio2.0',
     description: 'projectsPage.dexfolio.description',
     whatIDid: [
+      'projectsPage.dexfolio.whatIDid.line1',
       'projectsPage.dexfolio.whatIDid.line2',
       'projectsPage.dexfolio.whatIDid.line3',
       'projectsPage.dexfolio.whatIDid.line4',
@@ -126,9 +127,6 @@ const projectsList = [
       'projectsPage.dexfolio.whatIDid.line10',
       'projectsPage.dexfolio.whatIDid.line11',
       'projectsPage.dexfolio.whatIDid.line12',
-      'projectsPage.dexfolio.whatIDid.line13',
-      'projectsPage.dexfolio.whatIDid.line14',
-      'projectsPage.dexfolio.whatIDid.line15',
     ],
     stack:
       'Vue 3, Nuxt 3, FSD, Webpack, Module Federation, Vite, Pinia, i18n, JavaScript, TypeScript, Firebase(Auth & Database), Axios, Echarts',

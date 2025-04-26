@@ -15,7 +15,7 @@
           <ImageList :img-list="['/images/my-photo.png']" aspect-ratio="aspect-[1024/1270]" />
         </div>
 
-        <div class="text-sm text-c-dark sm:text-base md:text-[1rem]">
+        <div class="text-sm text-c-dark normal-case sm:text-base md:text-[1rem]">
           <p class="mb-4 font-bold">{{ $t('aboutPage.text0') }}</p>
           <p class="mb-4">{{ $t('aboutPage.text1') }}</p>
           <p class="mb-4">{{ $t('aboutPage.text2') }}</p>
