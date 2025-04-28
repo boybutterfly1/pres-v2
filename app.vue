@@ -7,9 +7,11 @@
     <NuxtPage />
   </NuxtLayout>
   <BottomNav class="fixed bottom-0 left-0 z-50" />
+  <Analytics />
 </template>
 
 <script setup lang="ts">
+import { Analytics } from '@vercel/analytics/nuxt';
 import { useHead, useI18n } from '#imports';
 import { watch } from 'vue';
 
