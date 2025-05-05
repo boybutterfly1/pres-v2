@@ -52,14 +52,14 @@ const contactLinks = [
   },
   {
     title: 'contacts.telegram',
-    description: '@boybutterfly1',
-    href: 'https://t.me/boybutterfly1',
+    description: '@btrfly11',
+    href: 'https://t.me/btrfly11',
     iconName: 'ri:telegram-2-fill',
   },
   {
     title: 'contacts.email',
-    description: 'boybutterfly1@gmail.com',
-    href: 'mailto:boybutterfly1@gmail.com',
+    description: 'k13butterfly1@gmail.com',
+    href: 'mailto:k13butterfly1@gmail.com',
     iconName: 'material-symbols:mail',
   },
 ];
