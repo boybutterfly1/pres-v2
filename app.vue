@@ -21,7 +21,7 @@ useHead({
   htmlAttrs: {
     lang: locale.value,
   },
-  meta: [{ name: 'description', content: 'My presentation website. Creator: @boybutterfly1.' }],
+  meta: [{ name: 'description', content: 'My presentation website. Creator: @btrfly11.' }],
 });
 
 watch(locale, (newLocale) => {
