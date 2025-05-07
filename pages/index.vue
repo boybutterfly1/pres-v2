@@ -11,7 +11,9 @@
       <TypeWriter :string-arr="[$t('intro.line1'), $t('intro.line2')]" />
     </span>
 
-    <PixiApp @loaded="setPending(false)" class="absolute top-0 left-0 z-10 h-full w-full" />
+    <ClientOnly>
+      <PixiApp @loaded="setPending(false)" class="absolute top-0 left-0 z-10 h-full w-full" />
+    </ClientOnly>
   </div>
 </template>
 
