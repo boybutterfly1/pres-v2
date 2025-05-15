@@ -8,7 +8,7 @@
       class="absolute top-1/3 z-20 w-full font-title text-[4vw] leading-tight text-white uppercase sm:h-[2.5rem] md:h-[3rem] lg:h-[4rem]"
       :style="{ transform: `translateY(${translateY}px)` }"
     >
-      <TypeWriter :string-arr="[$t('intro.line1'), $t('intro.line2')]" />
+      <TypeWriter :string-arr="[t('intro.line1'), t('intro.line2')]" />
     </span>
 
     <ClientOnly>

@@ -8,7 +8,7 @@
         v-if="!isLoaded"
         class="absolute top-1/2 left-1/2 z-100 -translate-x-1/2 -translate-y-1/2 rounded-lg p-5 text-[1rem] text-c-white"
       >
-        {{ `[ ${$t('utils.loading')} ]` }}
+        {{ `[ ${t('utils.loading')} ]` }}
       </span>
       <NuxtImg
         @click.stop
@@ -46,7 +46,9 @@
 import { onMounted, onUnmounted, ref, watch } from 'vue';
 import { useImageExpand } from '~/components/ImageExpanded/useImageExpand';
 import { useOverflow } from '~/composables/useOverflow';
+import { useI18n } from '#imports';
 
+const { t } = useI18n();
 const { imgSrc, resetImgSrc } = useImageExpand();
 const { resumeScroll } = useOverflow();
 

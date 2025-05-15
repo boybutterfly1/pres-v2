@@ -8,7 +8,7 @@
       <img loading="lazy" src="/images/globe.webp" width="100" alt="logo" class="aspect-square" />
       <div class="text-[0.65rem] text-c-white">2025®</div>
       <span class="col-start-5 col-end-7 row-start-1 row-end-2 text-[0.5rem] text-c-white">
-        {{ $t('decoration.rights') }}
+        {{ t('decoration.rights') }}
       </span>
 
       <div class="col-start-1 col-end-6 row-start-2 row-end-2 self-end">
@@ -30,6 +30,9 @@
 <script setup lang="ts">
 import { useIntersectionObserver } from '@vueuse/core';
 import { type Component, defineAsyncComponent, onMounted, ref, shallowRef } from 'vue';
+import { useI18n } from '#imports';
+
+const { t } = useI18n();
 
 const ThreeModel = shallowRef<Component | null>(null);
 

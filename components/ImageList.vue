@@ -5,7 +5,7 @@
       class="absolute inset-0 z-10 flex cursor-wait items-center justify-center rounded-md border border-dotted border-c-dark bg-gray-100"
     >
       <span class="text-gray-400">
-        {{ `[ ${$t('utils.loading')} ]` }}
+        {{ `[ ${t('utils.loading')} ]` }}
       </span>
     </div>
     <LazyNuxtImg
@@ -29,9 +29,11 @@
 import { ref } from 'vue';
 import { useImageExpand } from '~/components/ImageExpanded/useImageExpand';
 import { useOverflow } from '~/composables/useOverflow';
+import { useI18n } from '#imports';
 
 const { imgSrc, setImgSrc } = useImageExpand();
 const { stopScroll } = useOverflow();
+const { t } = useI18n();
 
 defineProps<{
   imgList: string[];

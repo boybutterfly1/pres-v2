@@ -3,7 +3,7 @@
     class="mb-3 ml-3 font-title text-[1.5rem] font-bold text-c-white sm:text-[1.75rem] md:text-[2rem]"
     :class="{ highlighted: isHighlighted }"
   >
-    <ScrambledText :text="$t('pageTitle.links')" />
+    <ScrambledText :text="t('pageTitle.links')" />
   </h2>
 
   <div
@@ -28,7 +28,7 @@
       class="z-11 cursor-pointer rounded-sm bg-c-dark px-3 py-2 uppercase transition-colors duration-200 hover:bg-neutral-800"
     >
       <div class="flex w-full items-center gap-2">
-        <span class="text-[0.65rem] sm:text-[0.7rem]">{{ $t(item.title) }}</span>
+        <span class="text-[0.65rem] sm:text-[0.7rem]">{{ t(item.title) }}</span>
         <Icon :name="item.iconName" size="0.9rem" />
         <Icon name="material-symbols:arrow-outward" size="0.9rem" class="ml-auto" />
       </div>
@@ -40,7 +40,9 @@
 <script setup lang="ts">
 import { useContacts } from '~/components/Contacts/useContacts';
 import { onMounted, onUnmounted, ref } from 'vue';
+import { useI18n } from '#imports';
 
+const { t } = useI18n();
 const { isHighlighted } = useContacts();
 
 const contactLinks = [

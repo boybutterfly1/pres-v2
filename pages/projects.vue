@@ -11,7 +11,7 @@
         <h1
           class="mt-4 mb-10 font-title text-2xl font-bold text-c-dark sm:mt-6 sm:text-3xl md:mt-8 md:text-[3rem]"
         >
-          <ScrambledText :text="$t('pageTitle.projects')" />
+          <ScrambledText :text="t('pageTitle.projects')" />
         </h1>
         <div
           :id="project.name.toLowerCase().replace(/ /g, '-')"
@@ -31,7 +31,7 @@
             class="right-side sticky top-10 col-start-2 row-start-1 row-end-3 ml-3 flex h-fit flex-col p-2"
           >
             <div class="mb-8 flex flex-col items-start gap-1.5">
-              <span class="mt-1">{{ $t('projectsPage.title') }}</span>
+              <span class="mt-1">{{ t('projectsPage.title') }}</span>
               <div class="flex items-center gap-2">
                 <h2 class="font-title text-xl font-bold">[ {{ project.name }} ]</h2>
                 <a :href="project.link" target="_blank">
@@ -51,8 +51,8 @@
               </div>
             </div>
             <div class="flex flex-col items-start gap-1.5">
-              <span class="mt-0.5">{{ $t('projectsPage.technology') }}</span>
-              <h3 class="mb-3 text-[0.85rem] font-bold">{{ $t('projectsPage.stack') }}</h3>
+              <span class="mt-0.5">{{ t('projectsPage.technology') }}</span>
+              <h3 class="mb-3 text-[0.85rem] font-bold">{{ t('projectsPage.stack') }}</h3>
             </div>
             <div class="flex flex-wrap gap-2">
               <span
@@ -65,18 +65,18 @@
             </div>
           </div>
           <div class="col-start-1 flex flex-col p-2">
-            <span class="font-bold">{{ $t('projectsPage.description') }}</span>
-            <p class="text-xs normal-case">{{ $t(project.description) }}</p>
+            <span class="font-bold">{{ t('projectsPage.description') }}</span>
+            <p class="text-xs normal-case">{{ t(project.description) }}</p>
           </div>
           <div class="col-start-1 flex flex-col p-2">
-            <span class="font-bold">{{ $t('projectsPage.whatIDid') }}</span>
+            <span class="font-bold">{{ t('projectsPage.whatIDid') }}</span>
             <ul class="up flex flex-col gap-1 normal-case">
               <li
                 v-for="(string, index) in project.whatIDid"
                 :key="index"
                 class="ml-3.5 list-disc text-xs"
               >
-                {{ $t(string) }}
+                {{ t(string) }}
               </li>
             </ul>
           </div>

@@ -1,7 +1,7 @@
 <template>
   <header class="scrolled-block flex h-8 w-full bg-c-dark px-3 text-c-white uppercase">
     <section class="flex w-1/3 items-center justify-start gap-3">
-      <NuxtLink to="/" :aria-label="$t('navigation.intro')">
+      <NuxtLink to="/" :aria-label="t('navigation.intro')">
         <Icon name="gridicons:domains" size="0.9rem" />
       </NuxtLink>
       <span>{{ currentRoute }}</span>
@@ -14,10 +14,10 @@
         @click="scrollToBlock"
         class="flex cursor-pointer items-center rounded-sm bg-neutral-800 p-1 uppercase duration-300 hover:bg-white hover:text-black"
       >
-        <span>{{ $t('header.contact') }}</span>
+        <span>{{ t('header.contact') }}</span>
         <Icon name="mynaui:arrow-long-down-solid" size="0.8rem" />
       </button>
-      <NuxtLink :to="$switchLocalePath(newLocale)" :aria-label="$t('utils.switchLang')">
+      <NuxtLink :to="$switchLocalePath(newLocale)" :aria-label="t('utils.switchLang')">
         {{ newLocale }}
       </NuxtLink>
     </section>

@@ -7,7 +7,7 @@
       <h1
         class="mb-10 font-title text-2xl font-bold text-c-dark sm:mb-16 sm:text-3xl md:mb-20 md:text-[3rem]"
       >
-        <ScrambledText :text="$t('pageTitle.stack')" />
+        <ScrambledText :text="t('pageTitle.stack')" />
       </h1>
 
       <div

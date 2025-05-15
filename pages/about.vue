@@ -7,7 +7,7 @@
       <h1
         class="mb-10 font-title text-2xl font-bold text-c-dark sm:mb-16 sm:text-3xl md:mb-20 md:text-[3rem]"
       >
-        <ScrambledText :text="$t('pageTitle.about')" />
+        <ScrambledText :text="t('pageTitle.about')" />
       </h1>
 
       <div class="relative w-full xl:w-2/3">
@@ -16,11 +16,11 @@
         </div>
 
         <div class="text-sm text-c-dark normal-case sm:text-base md:text-[1rem]">
-          <p class="mb-4 font-bold">{{ $t('aboutPage.text0') }}</p>
-          <p class="mb-4">{{ $t('aboutPage.text1') }}</p>
-          <p class="mb-4">{{ $t('aboutPage.text2') }}</p>
-          <p class="mb-4">{{ $t('aboutPage.text3') }}</p>
-          <p class="mb-4">{{ $t('aboutPage.text4') }}</p>
+          <p class="mb-4 font-bold">{{ t('aboutPage.text0') }}</p>
+          <p class="mb-4">{{ t('aboutPage.text1') }}</p>
+          <p class="mb-4">{{ t('aboutPage.text2') }}</p>
+          <p class="mb-4">{{ t('aboutPage.text3') }}</p>
+          <p class="mb-4">{{ t('aboutPage.text4') }}</p>
         </div>
       </div>
     </div>

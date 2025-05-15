@@ -8,7 +8,7 @@
       v-for="(item, index) in navItems"
       :key="item.name"
       :to="localePath({ name: item.to })"
-      :aria-label="$t(item.name)"
+      :aria-label="t(item.name)"
       @click="scrollToTop"
       :class="{ active: item.to === currentRoute }"
       class="flex w-full cursor-pointer items-center gap-5 px-1 py-[2px] hover:bg-neutral-800"
@@ -17,7 +17,7 @@
         {{ `[00-${index + 1}]` }}
       </span>
       <span class="font-main text-[0.65rem] font-bold tracking-wider uppercase">
-        {{ $t(item.name) }}
+        {{ t(item.name) }}
       </span>
       <Icon name="mdi:arrow-down-right" size="0.7rem" style="margin-left: auto" />
     </NuxtLink>
@@ -28,7 +28,9 @@
 import { ref, computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useLocalePath } from '#i18n';
+import { useI18n } from '#imports';
 
+const { t } = useI18n();
 const localePath = useLocalePath();
 
 const navItems = [
