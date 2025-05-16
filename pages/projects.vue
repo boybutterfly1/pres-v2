@@ -100,6 +100,22 @@ const projectsRef = ref<HTMLElement | null>(null);
 
 const projectsList = [
   {
+    name: 'Soljuh Map',
+    link: 'https://soljuh-recon.vercel.app/',
+    github: null,
+    description: 'projectsPage.soljuh.description',
+    whatIDid: [
+      'projectsPage.soljuh.whatIDid.line1',
+      'projectsPage.soljuh.whatIDid.line2',
+      'projectsPage.soljuh.whatIDid.line4',
+      'projectsPage.soljuh.whatIDid.line5',
+      'projectsPage.soljuh.whatIDid.line6',
+    ],
+    stack: 'Vue 3, Pinia, TypeScript, Axios, Websocket, Canvas',
+    imgList: ['/images/projects/soljuh1.png'],
+    video: '/video/soljuh.mp4',
+  },
+  {
     name: 'Presentation',
     link: 'https://boybutterfly1.vercel.app',
     github: 'https://github.com/boybutterfly1/pres-v2',
@@ -137,22 +153,6 @@ const projectsList = [
     stack:
       'Vue 3, Nuxt 3, FSD, Webpack, Module Federation, Vite, Pinia, i18n, JavaScript, TypeScript, Firebase(Auth & Database), Axios, Echarts',
     imgList: ['/images/projects/dexfolio1.png', '/images/projects/dexfolio2.png'],
-  },
-  {
-    name: 'Soljuh Map',
-    link: 'https://soljuh-recon.vercel.app/',
-    github: null,
-    description: 'projectsPage.soljuh.description',
-    whatIDid: [
-      'projectsPage.soljuh.whatIDid.line1',
-      'projectsPage.soljuh.whatIDid.line2',
-      'projectsPage.soljuh.whatIDid.line4',
-      'projectsPage.soljuh.whatIDid.line5',
-      'projectsPage.soljuh.whatIDid.line6',
-    ],
-    stack: 'Vue 3, Pinia, TypeScript, Axios, Websocket, Canvas',
-    imgList: ['/images/projects/soljuh1.png'],
-    video: '/video/soljuh.mp4',
   },
   {
     name: 'kanban',
