@@ -1,22 +1,26 @@
-import { ref } from 'vue';
-
-const isHighlighted = ref<boolean>(false);
+import { useState } from '#app';
 
 export function useContacts() {
+  const isHighlighted = useState<boolean>('contacts-highlighted', () => false);
+
   const highlightBlock = () => {
     setTimeout(() => {
       isHighlighted.value = true;
 
-      setTimeout(() => (isHighlighted.value = false), 700);
+      setTimeout(() => {
+        isHighlighted.value = false;
+      }, 700);
     }, 700);
   };
 
   const scrollToBlock = () => {
-    const block: HTMLDivElement | null = document.querySelector('#contactsBlock');
-    if (!block) return;
+    if (import.meta.client) {
+      const block: HTMLElement | null = document.querySelector('#contactsBlock');
+      if (!block) return;
 
-    block.scrollIntoView({ behavior: 'smooth' });
-    highlightBlock();
+      block.scrollIntoView({ behavior: 'smooth' });
+      highlightBlock();
+    }
   };
 
   return {

@@ -1,10 +1,11 @@
-import { ref } from 'vue';
 import { useOverflow } from '~/composables/useOverflow';
-
-const isPending = ref<boolean>(true);
-const { resumeScroll } = useOverflow();
+import { useState } from '#app';
 
 export const useRouterFallback = () => {
+  const isPending = useState<boolean>('pending', () => true);
+
+  const { resumeScroll } = useOverflow();
+
   const setPending = (value: boolean) => {
     isPending.value = value;
 

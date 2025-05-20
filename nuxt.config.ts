@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite';
 import svgLoader from 'vite-svg-loader';
 
@@ -16,7 +15,7 @@ export default defineNuxtConfig({
       scrollBehaviorType: 'smooth',
     },
   },
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   experimental: {
     treeshakeClientOnly: true,
     scanPageMeta: 'after-resolve',

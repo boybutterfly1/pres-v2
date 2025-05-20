@@ -2,26 +2,12 @@
   <div class="cursor">
     <div class="cursor-line horizontal" :style="{ transform: `translate3d(0, ${y}px, 0)` }" />
     <div class="cursor-line vertical" :style="{ transform: `translate3d(${x}px, 0, 0)` }" />
-    <div
-      v-if="!cursorText"
-      class="cursor-center"
-      :style="{ transform: `translate3d(${x - 17}px, ${y - 17}px, 0)` }"
-    />
-    <div
-      v-else
-      class="cursor-text"
-      :style="{ transform: `translate3d(${x - 90}px, ${y - 5}px, 0)` }"
-    >
-      {{ cursorText }}
-    </div>
+    <div class="cursor-center" :style="{ transform: `translate3d(${x - 17}px, ${y - 17}px, 0)` }" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
-import { useCursor } from '~/components/Cursor/useCursor';
-
-const { cursorText } = useCursor();
 
 const x = ref(0);
 const y = ref(0);
